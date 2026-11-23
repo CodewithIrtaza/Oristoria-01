@@ -45,7 +45,7 @@ Docs used below: [Project settings](https://supabase.com/docs/guides/platform/pr
 
 Auth email note: Supabase built-in email allows only **2 emails/hour project-wide** (see [rate limits](https://supabase.com/docs/guides/auth/rate-limits)) - relevant when magic links are first tested.
 
-Database TLS note: download the server root certificate from **Database Settings → SSL Configuration**. For a remote Supabase DSN, append `?sslmode=verify-full&sslrootcert=C:/path/to/prod-ca-2021.crt` (use `&` instead of `?` if the copied URL already has query parameters). The API and live database check reject remote DSNs that do not verify the server certificate and hostname. Loopback development URLs may omit TLS.
+Database TLS note: download the server root certificate from **Database Settings → SSL Configuration**. For a remote Supabase DSN, append `?sslmode=verify-full&sslrootcert=C:/path/to/prod-ca-2021.crt` (use `&` instead of `?` if the copied URL already has query parameters). The API and live database check reject remote DSNs that do not verify the server certificate and hostname, including blank or duplicate `sslmode` values. Use one unambiguous host; encode any `@` in credentials as `%40`. Loopback development URLs may omit TLS.
 
 ---
 
