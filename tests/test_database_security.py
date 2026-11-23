@@ -38,6 +38,7 @@ def test_remote_database_url_rejects_ambiguous_tls_mode(query: str) -> None:
         "postgresql://user@evil.com,garbage@localhost/db?sslmode=disable",
         "postgresql://user@localhost,evil.com/db?sslmode=verify-full",
         "postgresql://user@evil.com@localhost/db?sslmode=disable",
+        "postgresql://user@localhost:5432,evil.com/db?sslmode=disable",
     ],
 )
 def test_database_url_rejects_ambiguous_host_syntax(dsn: str) -> None:
