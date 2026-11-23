@@ -7,9 +7,10 @@
 #    "task-specific" (which contains "sk-") do not trigger a false alarm.
 #    API_KEY=/password= must be followed by a non-empty value so that empty
 #    .env.example assignments (e.g. OPENROUTER_API_KEY=) still commit.
-# gitleaks is NOT installed on this machine, so it is not run here. If you
-# install it, add its command by copying the syntax from its own README —
-# do not guess it.
+# 3) gitleaks runs only if it is installed (checked at commit time). The
+#    command below is copied verbatim from gitleaks' own
+#    .pre-commit-hooks.yaml (entry: gitleaks git --pre-commit --redact
+#    --staged --verbose) - not guessed.
 
 fail() {
   echo "pre-commit: BLOCKED - $1" >&2
@@ -31,6 +32,16 @@ done
 added=$(git diff --cached -U0 -- . ':(exclude).githooks/*' | grep -aE '^\+[^+]')
 if [ -n "$added" ] && printf '%s\n' "$added" | grep -aqE '(^|[^[:alnum:]_])(sk-|nvapi-|gsk_|AKIA|ghp_)|-----BEGIN|API_KEY=[^[:space:]]|password=[^[:space:]]'; then
   fail "key-like string in staged content (looking for: sk-, nvapi-, gsk_, AKIA, ghp_, -----BEGIN, API_KEY=<non-empty>, password=<non-empty>)"
+fi
+
+# 3) gitleaks, if installed on this machine.
+if command -v gitleaks >/dev/null 2>&1; then
+  echo "pre-commit: running gitleaks on staged content"
+  if ! gitleaks git --pre-commit --redact --staged --verbose; then
+    fail "gitleaks found secrets in staged content"
+  fi
+else
+  echo "pre-commit: gitleaks not installed - skipping gitleaks scan."
 fi
 
 exit 0
