@@ -67,7 +67,7 @@ propcache==0.5.4
 proto-plus==1.29.0
 protobuf==7.36.2
 psycopg==3.2.9
-psycopg-binary==3.2.9
+psycopg-binary==3.3.9
 psycopg-pool==3.3.3
 py-rust-stemmers==0.1.8
 pyasn1==0.6.5
