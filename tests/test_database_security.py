@@ -62,3 +62,35 @@ def test_database_cleanup_is_bounded(monkeypatch: pytest.MonkeyPatch) -> None:
     assert result is True
     assert connection.terminated is True
     assert elapsed < 1.0
+
+
+def test_remote_database_connection_forces_verified_tls(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class Connection:
+        async def fetchval(self, _query: str) -> int:
+            return 1
+
+        async def close(self, *, timeout: float | None = None) -> None:
+            return None
+
+        def terminate(self) -> None:
+            return None
+
+    connect_kwargs: dict[str, object] = {}
+
+    async def fake_connect(_dsn: str, **kwargs: object) -> Connection:
+        connect_kwargs.update(kwargs)
+        return Connection()
+
+    monkeypatch.setattr(asyncpg, "connect", fake_connect)
+
+    result = asyncio.run(
+        check_database(
+            "postgresql://user@db.example.com/postgres"
+            "?sslmode=verify-full&sslrootcert=ca.crt"
+        )
+    )
+
+    assert result is True
+    assert connect_kwargs["ssl"] == "verify-full"
