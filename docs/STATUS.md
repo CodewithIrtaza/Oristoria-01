@@ -11,7 +11,7 @@
 | H1 | Repo hygiene (gitignore, hooks, dependabot, PR template) | done | n/a | n/a | `7a1abf0`, `104e085` |
 | E1 | Environment setup (venv, pinned deps, env guide, doctor, live harness) | done | pass (3 passed) | pending - no keys set | `chore: environment setup` |
 | S1 | Application scaffold (API, web screen, tests, lint, CI, layout) | done | pass (5 passed) | waiting for key - 1 DB check skipped | `chore: scaffold` |
-| S2 | Database connection hardening (verified TLS, bounded cleanup) | done | pass (14 passed) | waiting for key - 1 DB check skipped | `fec10f3`, `34b2e07`, `2afe767`, `afca72d`, `f868683` |
+| S2 | Database connection hardening (verified TLS, bounded cleanup) | done | pass (15 passed) | waiting for key - 1 DB check skipped | `fec10f3`, `34b2e07`, `2afe767`, `afca72d`, `f868683`, `3557ec0`, `8447b60` |
 
 ## Environment health (last doctor run: 2026-11-23, session 3 - all vars MISSING, every live check skipped)
 | Service | First needed by | Status |
@@ -40,7 +40,7 @@
 
 ## TDD evidence
 - RED: the focused security suite reproduced accepted duplicate TLS modes, cleanup timeout without forced termination, and an ambiguous-host parser differential; each case failed for the intended reason before its fix.
-- GREEN: `apps/api/.venv/Scripts/python.exe -m pytest tests/test_database_security.py -q` passes 10 tests; the full fast suite passes 14 tests.
+- GREEN: `apps/api/.venv/Scripts/python.exe -m pytest tests/test_database_security.py -q` passes 11 tests; the full fast suite passes 15 tests.
 - Coverage: the approved dependency set has no coverage tool, so no package was installed; the changed TLS and cleanup branches have direct regression tests.
 
 ## Known bugs and debts
