@@ -1,0 +1,36 @@
+#!/bin/sh
+# pre-commit — repo safety net for AGENTS.md "Never" rules.
+# 1) Blocks any staged .env file (.env.example is the only allowed variant).
+# 2) Blocks key-like strings on added lines:
+#      sk-  nvapi-  gsk_  AKIA  ghp_  -----BEGIN  API_KEY=<value>  password=<value>
+#    Prefixes require a non-word boundary so ordinary words such as
+#    "task-specific" (which contains "sk-") do not trigger a false alarm.
+#    API_KEY=/password= must be followed by a non-empty value so that empty
+#    .env.example assignments (e.g. OPENROUTER_API_KEY=) still commit.
+# gitleaks is NOT installed on this machine, so it is not run here. If you
+# install it, add its command by copying the syntax from its own README —
+# do not guess it.
+
+fail() {
+  echo "pre-commit: BLOCKED - $1" >&2
+  exit 1
+}
+
+# 1) No .env file may ever be staged.
+for f in $(git diff --cached --name-only); do
+  case "$f" in
+    .env.example|*/.env.example) ;;
+    .env|.env.*|*/.env|*/.env.*) fail "staged env file: $f" ;;
+  esac
+done
+
+# 2) Scan added lines only (diff lines starting with '+' excluding '+++' headers).
+#    .githooks/ is excluded from the string scan because this hook necessarily
+#    contains the very patterns it searches for (it would block itself); the
+#    .env filename check above still applies to every path, hooks included.
+added=$(git diff --cached -U0 -- . ':(exclude).githooks/*' | grep -aE '^\+[^+]')
+if [ -n "$added" ] && printf '%s\n' "$added" | grep -aqE '(^|[^[:alnum:]_])(sk-|nvapi-|gsk_|AKIA|ghp_)|-----BEGIN|API_KEY=[^[:space:]]|password=[^[:space:]]'; then
+  fail "key-like string in staged content (looking for: sk-, nvapi-, gsk_, AKIA, ghp_, -----BEGIN, API_KEY=<non-empty>, password=<non-empty>)"
+fi
+
+exit 0

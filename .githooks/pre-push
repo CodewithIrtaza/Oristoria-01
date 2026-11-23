@@ -1,0 +1,26 @@
+#!/bin/sh
+# pre-push — run the fast tests if a test setup exists; otherwise skip
+# with a message. A "test setup" is a pytest config file or a tests/
+# directory, at the repo root or under apps/api/.
+
+if [ -f pytest.ini ] || [ -f pyproject.toml ] || [ -f tox.ini ] || [ -d tests ] \
+   || [ -f apps/api/pytest.ini ] || [ -f apps/api/pyproject.toml ] || [ -d apps/api/tests ]; then
+  PY=""
+  if [ -x "apps/api/.venv/Scripts/python.exe" ]; then PY="apps/api/.venv/Scripts/python.exe"
+  elif [ -x "apps/api/.venv/bin/python" ]; then PY="apps/api/.venv/bin/python"
+  elif command -v python >/dev/null 2>&1; then PY="python"
+  fi
+  if [ -z "$PY" ]; then
+    echo "pre-push: test setup found but no Python interpreter available - push rejected." >&2
+    exit 1
+  fi
+  echo "pre-push: running fast tests: $PY -m pytest -m 'not live'"
+  if ! "$PY" -m pytest -m "not live"; then
+    echo "pre-push: fast tests FAILED - push rejected." >&2
+    exit 1
+  fi
+else
+  echo "pre-push: no test setup found yet - skipping fast tests."
+fi
+
+exit 0
