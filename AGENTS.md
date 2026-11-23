@@ -4,15 +4,15 @@ Turns a user's own documents into source-grounded, cited answers and research de
 ## Stack and layout
 - Backend: Python 3.11+, FastAPI + Uvicorn in `apps/api/`. Frontend: React 19 + TypeScript (Vite, React Router v7) in `apps/web/`.
 - Database: Supabase (Postgres + pgvector), dev project `Taleem.AI` (ap-northeast-1), currently paused. Migrations are numbered SQL files in `migrations/`.
-- Python venv: `<folder>/.venv`. Always call it by path: `<folder>/.venv/bin/python`.
+- Python venv: `apps/api/.venv` (Python 3.12.13). Always call it by path: `apps/api/.venv/Scripts/python.exe` (Windows) / `apps/api/.venv/bin/python` (POSIX).
 - Do not add a framework, service or env var that is not in docs/TECH_DESIGN.md without asking.
 
 ## Commands (unverified until Prompt 6 runs them)
-- Install: `uv pip install -r apps/api/requirements.txt`
+- Install: `uv pip install --python apps/api/.venv/Scripts/python.exe -r apps/api/requirements.txt`
 - Run dev server: `uvicorn` (API) / `vite preview` (web)
-- Fast tests (fakes): `<venv python> -m pytest -m "not live"`
-- Live checks (real services, local only): `<venv python> -m pytest -m live`
-- Environment check: `<venv python> scripts/doctor.py`
+- Fast tests (fakes, from repo root): `apps/api/.venv/Scripts/python.exe -m pytest -m "not live"`
+- Live checks (real services, local only): `apps/api/.venv/Scripts/python.exe -m pytest -m live`
+- Environment check: `apps/api/.venv/Scripts/python.exe scripts/doctor.py`
 - Lint and format: `<command>`
 
 ## Never
