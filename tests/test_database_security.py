@@ -32,6 +32,19 @@ def test_remote_database_url_rejects_ambiguous_tls_mode(query: str) -> None:
         validate_database_url(f"postgresql://user@db.example.com/postgres?{query}")
 
 
+@pytest.mark.parametrize(
+    "dsn",
+    [
+        "postgresql://user@evil.com,garbage@localhost/db?sslmode=disable",
+        "postgresql://user@localhost,evil.com/db?sslmode=verify-full",
+        "postgresql://user@evil.com@localhost/db?sslmode=disable",
+    ],
+)
+def test_database_url_rejects_ambiguous_host_syntax(dsn: str) -> None:
+    with pytest.raises(ValueError, match="exactly one host"):
+        validate_database_url(dsn)
+
+
 def test_database_cleanup_is_bounded(monkeypatch: pytest.MonkeyPatch) -> None:
     class SlowCloseConnection:
         def __init__(self) -> None:
