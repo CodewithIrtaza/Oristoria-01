@@ -6,7 +6,6 @@ Fast tests must never import from this package.
 """
 from __future__ import annotations
 
-import asyncio
 import os
 
 import pytest
@@ -23,26 +22,11 @@ def _require(*vars_: str) -> None:
 
 
 def test_supabase() -> None:
-    """Database SELECT 1, falling back to auth JWKS reachability."""
-    dsn = os.environ.get("DATABASE_URL")
-    if dsn:
-        import asyncpg
-
-        async def run() -> int:
-            conn = await asyncpg.connect(dsn, timeout=TIMEOUT)
-            try:
-                return await conn.fetchval("SELECT 1")
-            finally:
-                await conn.close()
-
-        assert asyncio.run(run()) == 1
-        return
-
-    url = os.environ.get("SUPABASE_URL")
-    if not url:
-        pytest.skip("DATABASE_URL and SUPABASE_URL not set - create per docs/ENV_GUIDE.md")
+    """Supabase Auth JWKS reachability."""
+    _require("SUPABASE_URL")
     import httpx
 
+    url = os.environ["SUPABASE_URL"]
     resp = httpx.get(f"{url.rstrip('/')}/auth/v1/.well-known/jwks.json", timeout=TIMEOUT)
     assert resp.status_code == 200, f"JWKS endpoint returned HTTP {resp.status_code}"
 

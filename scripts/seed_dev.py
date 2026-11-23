@@ -1,0 +1,1 @@
+"""Development seed script scaffold."""

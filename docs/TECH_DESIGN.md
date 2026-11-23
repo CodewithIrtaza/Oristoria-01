@@ -465,7 +465,7 @@ oristoria/
 | `structlog` (26.x) | JSON logging | https://pypi.org/project/structlog/ |
 | `pytest` (9.x) + `pytest-asyncio` (1.5.x) | Test runner + async tests | https://pypi.org/project/pytest/ · https://pypi.org/project/pytest-asyncio/ |
 
-Python floor: **3.11+** (required by the current versions of FastAPI, pydantic-settings, and supabase).
+Python floor: **3.12+** (the pinned `numpy==2.5.5` release requires Python >=3.12).
 
 ### 7.3 JavaScript packages (apps/web) — official docs
 

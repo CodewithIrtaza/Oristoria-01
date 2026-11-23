@@ -1,0 +1,1 @@
+"""Manual billing provider scaffold."""

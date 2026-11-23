@@ -1,0 +1,1 @@
+"""Artifact router scaffold."""

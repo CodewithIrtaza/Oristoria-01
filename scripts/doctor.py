@@ -16,6 +16,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+API_ROOT = ROOT / "apps/api"
+if str(API_ROOT) not in sys.path:
+    sys.path.insert(0, str(API_ROOT))
+
 EXAMPLE = ROOT / ".env.example"
 ENV_FILE = ROOT / ".env"
 TIMEOUT = 15.0
@@ -59,14 +63,10 @@ async def check_supabase_auth() -> None:
 
 
 async def check_database() -> None:
-    import asyncpg
+    from app.db.session import check_database as database_reachable
 
-    conn = await asyncpg.connect(os.environ["DATABASE_URL"], timeout=TIMEOUT)
-    try:
-        value = await conn.fetchval("SELECT 1")
-    finally:
-        await conn.close()
-    if value != 1:
+    reachable = await database_reachable(os.environ["DATABASE_URL"], timeout=TIMEOUT)
+    if not reachable:
         raise RuntimeError("unexpected SELECT 1 result")
 
 
