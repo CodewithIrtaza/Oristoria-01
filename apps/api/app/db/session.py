@@ -17,7 +17,8 @@ def validate_database_url(dsn: str) -> None:
     if not host:
         raise ValueError("DATABASE_URL must include a host")
 
-    if parsed.netloc.count("@") > 1 or "," in host:
+    host_spec = parsed.netloc.rsplit("@", 1)[-1]
+    if parsed.netloc.count("@") > 1 or "," in host_spec:
         raise ValueError("DATABASE_URL must specify exactly one host")
 
     if host.lower() in LOOPBACK_HOSTS:
