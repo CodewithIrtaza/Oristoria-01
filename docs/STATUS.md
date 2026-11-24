@@ -1,9 +1,9 @@
-# STATUS - Oristoria (updated 2026-11-24, session 4, model nemotron-3-ultra)
+# STATUS - Oristoria (updated 2026-11-24, session 5, model nemotron-3-ultra)
 
 ## Now
-- Current task: T00 Design system complete — tokens, theme, base components, and `/design` showcase page implemented and tested.
-- Next step (one sentence): Begin T01 Auth — magic-link sign-up/sign-in + session using Supabase Auth.
-- Blocked on me: nothing — ready to proceed to T01.
+- Current task: **T01 Auth complete** — magic-link sign-up/sign-in + session using Supabase Auth implemented and tested.
+- Next step (one sentence): Begin T02 Onboarding — welcome → workspace → first question (sample) using seeded source.
+- Blocked on me: nothing — ready to proceed to T02.
 
 ## Task board
 | ID | Task | State | Fast tests | Live check | Commit |
@@ -13,6 +13,7 @@
 | S1 | Application scaffold (API, web screen, tests, lint, CI, layout) | done | pass (5 passed) | waiting for key - 1 DB check skipped | `chore: scaffold` |
 | S2 | Database connection hardening (verified TLS, bounded cleanup) | done | pass (15 passed) | waiting for key - 1 DB check skipped | `fec10f3`, `34b2e07`, `2afe767`, `afca72d`, `f868683`, `3557ec0`, `8447b60` |
 | T00 | Design system: tokens, theme, base components | **done** | **pass (67 passed)** | n/a (pure frontend) | `feat: design system tokens and components` |
+| T01 | Auth: magic-link sign-up/sign-in + session | **done** | **pass (12 API + 14 web)** | Supabase Auth (pending keys) | `feat: auth magic-link + JWT` |
 
 ## Environment health (last doctor run: 2026-11-23, session 3 - all vars MISSING, every live check skipped)
 | Service | First needed by | Status |
@@ -39,6 +40,7 @@
 - Python project lives in `apps/api/`: venv `apps/api/.venv` (Python 3.12.13), pins in `apps/api/requirements.txt` (115 lines, matches `uv pip freeze`).
 - pytest config lives in root `pytest.ini` (`addopts = -m "not live"`), so `pytest -m live` is the only way live tests run; fast tests are in `tests/`, live tests in `tests/live/` (fast tests never import from live).
 - **Design system uses CSS custom properties (CSS variables) for all tokens — no hardcoded colors, spacing, or sizing. Theme switching via `[data-theme]` attribute on `<html>` with localStorage persistence.**
+- **Auth uses Supabase magic-link with JWT verification via HS256; logout clears cookies; `/v1/me` returns user profile from validated JWT.**
 
 ## TDD evidence
 - RED: the focused security suite reproduced accepted duplicate TLS modes, cleanup timeout without forced termination, and an ambiguous-host parser differential; each case failed for the intended reason before its fix.
@@ -46,6 +48,8 @@
 - Coverage: the approved dependency set has no coverage tool, so no package was installed; the changed TLS and cleanup branches have direct regression tests.
 - **T00 RED: wrote 3 failing test files (Button, Card, tokens) covering variants, states, focus rings, dark mode, and token parity with DESIGN.md.**
 - **T00 GREEN: all 67 tests pass; `npm run lint` (tsc --noEmit) clean.**
+- **T01 RED: wrote 4 failing test files (auth router, auth deps, MagicLinkRequest, Callback) covering magic-link, JWT verification, logout, and callback flows.**
+- **T01 GREEN: all 12 API + 14 web tests pass; `npm run lint` and `python -m py_compile` clean.**
 
 ## Known bugs and debts
 - The frontend source passes the design lint with 0 failures and 0 warnings, but its build, browser inspection, and lockfile generation are pending approval to install the declared JavaScript packages.
@@ -54,6 +58,7 @@
 - Service adapters and domain modules are deliberately empty scaffold modules; only the public hello/health behavior and database connectivity are implemented.
 - `scripts/doctor.py` can only prove credentials work; it does not verify free-tier quotas (RPM/TPM/email-per-hour) - those stay manual LIVE CHECKs.
 - Token tests verify CSS variable values via getComputedStyle in jsdom; actual browser rendering verified manually.
+- Magic-link test returns 400 when Supabase not configured; live check pending Supabase keys.
 
 ## Resume
 1. `git status` and `git branch`

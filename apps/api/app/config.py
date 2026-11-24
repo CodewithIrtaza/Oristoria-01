@@ -17,6 +17,16 @@ class Settings(BaseSettings):
     database_url: SecretStr | None = None
     frontend_origin: str | None = None
 
+    # Supabase Auth
+    supabase_url: SecretStr | None = None
+    supabase_anon_key: SecretStr | None = None
+    supabase_service_role_key: SecretStr | None = None
+    supabase_jwt_secret: SecretStr | None = None
+
+    # Auth
+    auth_cookie_secret: SecretStr | None = None
+    auth_redirect_url: str | None = None
+
 
 @lru_cache
 def get_settings() -> Settings:

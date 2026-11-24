@@ -31,3 +31,6 @@ export type { AvatarProps, AvatarSize } from "./Avatar";
 
 export { Icon, Icons } from "./Icon";
 export type { IconProps, IconSize, IconName } from "./Icon";
+
+export { ThemeProvider, useTheme, ThemeToggle } from "./ThemeProvider";
+export type { Theme } from "./ThemeProvider";
