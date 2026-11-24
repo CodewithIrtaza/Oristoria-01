@@ -28,20 +28,21 @@ Every dashboard/doc link below was confirmed reachable on **2026-11-23**.
 
 ## 2. Supabase (Auth + Postgres + pgvector)
 
-Dashboard: <https://supabase.com/dashboard> — select the dev project **`Taleem.AI`** (ref `zykipnawtoxnkezivaqc`, region `ap-northeast-1`).
+Dashboard: <https://supabase.com/dashboard> — select the dev project **`gbfvxbdqgpkcjyvqzqvh`** (region `ap-south-1`).
 **It is currently PAUSED — unpause it first** (risk #1: free projects auto-pause after 1 week idle; max 2 active projects).
 
 Docs used below: [Project settings](https://supabase.com/docs/guides/platform/project-settings) · [Access tokens & API keys](https://supabase.com/docs/guides/platform/access-tokens) · [Connecting to Postgres / database URLs](https://supabase.com/docs/guides/database/connecting-to-postgres) · [Auth rate limits](https://supabase.com/docs/guides/auth/rate-limits) · [Redirect URLs](https://supabase.com/docs/guides/auth/redirect-urls)
 
 | Variable | Exact steps (dashboard page) | Dev | Prod | First task | Free tier / cost |
 |---|---|---|---|---|---|
-| `SUPABASE_URL` | Dashboard → project → **Project Settings → API** → copy **Project URL** | from `Taleem.AI` | new prod project, same page | Copy from dev project settings | 500 MB DB, 5 GB egress, unlimited API requests — $0 |
-| `SUPABASE_ANON_KEY` | Same page → **Project API keys** → publishable/`anon` key | from `Taleem.AI` | new prod project | Copy from dev project settings | included above — $0 |
-| `SUPABASE_SERVICE_ROLE_KEY` | Same page → **Project API keys** → `service_role` (server-only, BYPASSRLS) | from `Taleem.AI` | new prod project | Copy, then keep out of git and store in a secret store | included above — $0 |
+| `SUPABASE_URL` | Dashboard → project → **Project Settings → API** → copy **Project URL** | from `gbfvxbdqgpkcjyvqzqvh` | new prod project, same page | Copy from dev project settings | 500 MB DB, 5 GB egress, unlimited API requests — $0 |
+| `SUPABASE_ANON_KEY` | Same page → **Project API keys** → publishable/`anon` key | from `gbfvxbdqgpkcjyvqzqvh` | new prod project | Copy from dev project settings | included above — $0 |
+| `SUPABASE_SERVICE_ROLE_KEY` | Same page → **Project API keys** → `service_role` (server-only, BYPASSRLS) | from `gbfvxbdqgpkcjyvqzqvh` | new prod project | Copy, then keep out of git and store in a secret store | included above — $0 |
 | `DATABASE_URL` | Dashboard → **Connect → Session pooler** → copy the pooled connection string (role `app_api`), then add `sslmode=verify-full` and `sslrootcert` pointing to the downloaded Supabase CA certificate | session-pooler DSN | same, own project | Create `app_api` role via migration first, then copy DSN | free connection limits apply; pooling included — $0 |
 | `MIGRATIONS_DATABASE_URL` | Dashboard → **Connect → Direct connection** → copy the owner-role DSN for Alembic only, then add the same `sslmode=verify-full` and `sslrootcert` parameters | direct DSN | same, own project | Copy direct DSN; keep out of the app image | $0 |
 | `AUTH_REDIRECT_URL` | Dashboard → **Authentication → URL Configuration** → add allowed redirect URL | `http://localhost:5173/...` | prod domain URL | Add localhost first, then prod URL | Auth: 50k MAU free; links expire 1 h; 30 sign-in req / 5 min / IP |
 | `AUTH_COOKIE_SECRET` | No dashboard — generate locally: `python -c "import secrets; print(secrets.token_urlsafe(32))"` and paste **into `.env` yourself** | 32 random bytes | separate 32 random bytes | Generate 32-byte random value | free; rotating it invalidates sessions |
+| `SUPABASE_JWT_SECRET` | Dashboard → **Project Settings → API** → copy **JWT Secret** | from `gbfvxbdqgpkcjyvqzqvh` | new prod project | Copy from dev project settings | included above — $0 |
 
 Auth email note: Supabase built-in email allows only **2 emails/hour project-wide** (see [rate limits](https://supabase.com/docs/guides/auth/rate-limits)) - relevant when magic links are first tested.
 
