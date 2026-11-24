@@ -5,9 +5,12 @@ from supabase import create_client, Client
 from supabase import AuthApiError
 
 from app.config import get_settings, Settings
+from app.db.repositories import OnboardingRepository, get_onboarding_repo
 from app.deps.auth import get_current_user, CurrentUser
+from app.schemas.onboarding import OnboardingChecklist, WorkspaceBrief, build_checklist
 
 router = APIRouter(prefix="/v1/auth", tags=["auth"])
+router_root = APIRouter(tags=["auth"])
 
 
 # =============================================================================
@@ -26,6 +29,8 @@ class MeResponse(BaseModel):
     user_id: str
     email: str
     role: str
+    workspace: WorkspaceBrief | None = None
+    onboarding: OnboardingChecklist
 
 
 class VerifyRequest(BaseModel):
@@ -158,16 +163,40 @@ async def verify_magic_link(
         raise HTTPException(status_code=401, detail=str(e))
 
 
-@router.get("/me", response_model=MeResponse)
-async def get_me(
-    current_user: CurrentUser = Depends(get_current_user),
+async def _me_payload(
+    current_user: CurrentUser,
+    repo: OnboardingRepository,
 ) -> MeResponse:
-    """
-    Get current user profile from validated JWT.
-    Requires valid Authorization: Bearer <token> header.
-    """
+    """Build the /v1/me body: profile + workspace + onboarding checklist."""
+    profile = await repo.get_or_create_profile(current_user.user_id, current_user.email)
+    workspace = await repo.get_workspace(current_user.user_id)
+    checklist = build_checklist(workspace, profile.onboarding_state)
     return MeResponse(
         user_id=current_user.user_id,
         email=current_user.email,
         role=current_user.role,
+        workspace=WorkspaceBrief(id=workspace.id, name=workspace.name) if workspace else None,
+        onboarding=checklist,
     )
+
+
+@router.get("/me", response_model=MeResponse)
+async def get_me(
+    current_user: CurrentUser = Depends(get_current_user),
+    repo: OnboardingRepository = Depends(get_onboarding_repo),
+) -> MeResponse:
+    """
+    Get current user profile from validated JWT.
+    Requires valid Authorization: Bearer <token> header.
+    Includes workspace and onboarding checklist (B6).
+    """
+    return await _me_payload(current_user, repo)
+
+
+@router_root.get("/v1/me", response_model=MeResponse)
+async def get_me_root(
+    current_user: CurrentUser = Depends(get_current_user),
+    repo: OnboardingRepository = Depends(get_onboarding_repo),
+) -> MeResponse:
+    """TECH_DESIGN §4.3 GET /v1/me — same payload as /v1/auth/me."""
+    return await _me_payload(current_user, repo)

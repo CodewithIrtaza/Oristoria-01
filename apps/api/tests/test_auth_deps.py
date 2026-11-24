@@ -49,7 +49,7 @@ class TestGetCurrentUser:
         """Valid JWT should return user_id."""
         from app.deps.auth import _verify_jwt
         from app.config import Settings
-        
+
         settings = Settings(
             supabase_jwt_secret="test-secret",
             supabase_url="https://test.supabase.co",

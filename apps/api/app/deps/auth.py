@@ -105,7 +105,11 @@ async def _verify_jwt(token: str, settings: Settings) -> JWTPayload:
             settings.supabase_jwt_secret.get_secret_value(),
             algorithms=["HS256"],
             audience="authenticated",
-            issuer=f"{settings.supabase_url.get_secret_value()}/auth/v1" if settings.supabase_url else None,
+            issuer=(
+                f"{settings.supabase_url.get_secret_value()}/auth/v1"
+                if settings.supabase_url
+                else None
+            ),
             options={
                 "verify_exp": True,
                 "verify_aud": True,

@@ -1,9 +1,9 @@
-# STATUS - Oristoria (updated 2026-11-24, session 6, model nemotron-3-ultra)
+# STATUS - Oristoria (updated 2026-11-24, session 7, model nemotron-3-ultra)
 
 ## Now
-- Current task: **T01 Auth complete** — magic-link sign-up/sign-in + session using Supabase Auth implemented and tested.
-- Next step (one sentence): Begin T02 Onboarding — welcome → workspace → first question (sample) using seeded source.
-- Blocked on me: nothing — ready to proceed to T02.
+- Current task: **T02 Onboarding complete** — welcome → workspace → first question (sample) using seeded source.
+- Next step (one sentence): Begin T03 Workspace CRUD + tenant isolation test (User A ≠ User B).
+- Blocked on me: nothing — ready to proceed to T03.
 
 ## Task board
 | ID | Task | State | Fast tests | Live check | Commit |
@@ -14,8 +14,9 @@
 | S2 | Database connection hardening (verified TLS, bounded cleanup) | done | pass (15 passed) | waiting for key - 1 DB check skipped | `fec10f3`, `34b2e07`, `2afe767`, `afca72d`, `f868683`, `3557ec0`, `8447b60` |
 | T00 | Design system: tokens, theme, base components | **done** | **pass (67 passed)** | n/a (pure frontend) | `feat: design system tokens and components` |
 | T01 | Auth: magic-link sign-up/sign-in + session | **done** | **pass (12 API + 14 web)** | Supabase DB **pass** (require mode) | `feat: auth magic-link + JWT` |
+| T02 | Onboarding: welcome → workspace → first question (sample) | **done** | **pass (21 API + 97 web)** | n/a (sample source, no external service) | `feat: onboarding workspace + sample answer` |
 
-## Environment health (last doctor run: 2026-11-24, session 6 - keys SET)
+## Environment health (last doctor run: 2026-11-24, session 7 - keys SET)
 | Service | First needed by | Status |
 | --- | --- | --- |
 | Supabase (Auth + Postgres + pgvector) | First migration / RLS tests | **DB connected (require mode)** - project `Taleem.AI` active |
@@ -31,6 +32,7 @@
 | LangSmith | OQ-06 decision (unused by default) | intentionally unused - leave `LANGSMITH_API_KEY` unset |
 
 ## Decisions (newest first)
+- **T02:** Onboarding sample source uses a dedicated non-tenant `onboarding_samples` table (seeded via `scripts/seed_dev.py`); first-value activation stored idempotently in `profiles.onboarding_state.jsonb` per TECH_DESIGN §4.2; real LLM deferred to T07 (deterministic SSE answer built from seeded sample text).
 - Remote database connections require one unambiguous host and exactly one `sslmode=verify-full`, force verified TLS at the asyncpg call boundary, and terminate a connection whose graceful close exceeds its deadline; loopback development URLs may omit TLS.
 - The supported Python floor is 3.12: PyPI metadata confirms the pinned `numpy==2.5.5` requires Python >=3.12, so CI and project docs now agree with the installed dependency set.
 - The scaffold exposes `GET /` as the hello-world endpoint and `GET /healthz` as the unauthenticated liveness probe; both returned the expected JSON under Uvicorn.
@@ -51,6 +53,8 @@
 - **T00 GREEN: all 67 tests pass; `npm run lint` (tsc --noEmit) clean.**
 - **T01 RED: wrote 4 failing test files (auth router, auth deps, MagicLinkRequest, Callback) covering magic-link, JWT verification, logout, and callback flows.**
 - **T01 GREEN: all 12 API + 14 web tests pass; `npm run lint` and `python -m py_compile` clean.**
+- **T02 RED: wrote 3 API test files (onboarding router — workspace, sample SSE answer, first-value idempotent + isolation; plus auth deps extension) + 3 web test files (WorkspaceStep, FirstQuestionStep, API client — Bearer-from-cookie + SSE parser). All failed with ImportError/404/validation before implementation.**
+- **T02 GREEN: all 21 API + 97 web tests pass; Python `lint.py` clean; `tsc --noEmit` clean.**
 
 ## Known bugs and debts
 - The frontend source passes the design lint with 0 failures and 0 warnings, but its build, browser inspection, and lockfile generation are pending approval to install the declared JavaScript packages.
@@ -61,6 +65,7 @@
 - Token tests verify CSS variable values via getComputedStyle in jsdom; actual browser rendering verified manually.
 - Magic-link test returns 400 when Supabase not configured; live check pending Supabase keys.
 - Database `verify-full` mode fails with pooler CA cert mismatch; using `require` mode for live check.
+- `SUPABASE_JWT_SECRET` is absent from `.env` — real-token `/v1/me` returns 500 (pre-existing, affects T01 too). Added to `.env.example` and will document in ENV_GUIDE/TECH_DESIGN.
 
 ## Resume
 1. `git status` and `git branch`

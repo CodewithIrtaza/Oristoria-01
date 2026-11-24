@@ -35,31 +35,31 @@ def _build_ssl_context(dsn: str) -> ssl_module.SSLContext:
     """Build SSL context with certificate from DSN or default locations."""
     parsed = urlsplit(dsn)
     query = parse_qs(parsed.query, keep_blank_values=True)
-    
+
     # Check sslmode from DSN
     sslmode = query.get("sslmode", ["verify-full"])[0].lower()
-    
+
     # Check for sslrootcert in DSN query parameters
     sslrootcert = query.get("sslrootcert", [None])[0]
-    
+
     cert_paths = []
     if sslrootcert:
         cert_paths.append(Path(sslrootcert))
-    
+
     # Default locations
     cert_paths.extend([
         Path.home() / ".postgresql" / "root.crt",
         Path("C:/Users") / "HP G8" / ".postgresql" / "root.crt",
         Path("C:/Program Files/PostgreSQL") / "16" / "root.crt",
     ])
-    
+
     if sslmode == "require":
         # require mode: use SSL but don't verify certificate
         ctx = ssl_module.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl_module.CERT_NONE
         return ctx
-    
+
     # verify-full mode: require valid certificate
     for cert_path in cert_paths:
         if cert_path.exists():
@@ -67,7 +67,7 @@ def _build_ssl_context(dsn: str) -> ssl_module.SSLContext:
             ctx.verify_mode = ssl_module.CERT_REQUIRED
             ctx.load_verify_locations(cafile=str(cert_path))
             return ctx
-    
+
     # Fallback: use system default with CERT_REQUIRED
     ctx = ssl_module.create_default_context()
     ctx.verify_mode = ssl_module.CERT_REQUIRED

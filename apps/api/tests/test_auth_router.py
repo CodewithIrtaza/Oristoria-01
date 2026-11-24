@@ -19,7 +19,7 @@ class TestMagicLinkRouter:
 
     @pytest.mark.asyncio
     async def test_post_magic_link_returns_202_or_400(self, mock_supabase_client):
-        """POST /v1/auth/magic-link with valid email returns 202 or 400 if Supabase not configured."""
+        """POST /v1/auth/magic-link returns 202 or 400 if Supabase not configured."""
         mock_supabase_client.auth.sign_in_with_otp = AsyncMock(
             return_value=MagicMock(user=None, session=None)
         )

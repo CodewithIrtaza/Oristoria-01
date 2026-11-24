@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.routers import auth
+from app.routers import auth, onboarding
 
 app = FastAPI(title="Oristoria API")
 
@@ -20,6 +20,8 @@ if settings.frontend_origin:
 
 # Include routers
 app.include_router(auth.router)
+app.include_router(auth.router_root)
+app.include_router(onboarding.router)
 
 
 @app.get("/")
