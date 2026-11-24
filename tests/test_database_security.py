@@ -1,5 +1,6 @@
 """Fast tests for database connection safeguards."""
 import asyncio
+import ssl as ssl_module
 import time
 
 import asyncpg
@@ -107,4 +108,7 @@ def test_remote_database_connection_forces_verified_tls(
     )
 
     assert result is True
-    assert connect_kwargs["ssl"] == "verify-full"
+    ssl_ctx = connect_kwargs["ssl"]
+    assert isinstance(ssl_ctx, ssl_module.SSLContext)
+    assert ssl_ctx.verify_mode == ssl_module.CERT_REQUIRED
+    assert ssl_ctx.check_hostname is True

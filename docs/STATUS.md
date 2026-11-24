@@ -1,4 +1,4 @@
-# STATUS - Oristoria (updated 2026-11-24, session 5, model nemotron-3-ultra)
+# STATUS - Oristoria (updated 2026-11-24, session 6, model nemotron-3-ultra)
 
 ## Now
 - Current task: **T01 Auth complete** — magic-link sign-up/sign-in + session using Supabase Auth implemented and tested.
@@ -13,12 +13,12 @@
 | S1 | Application scaffold (API, web screen, tests, lint, CI, layout) | done | pass (5 passed) | waiting for key - 1 DB check skipped | `chore: scaffold` |
 | S2 | Database connection hardening (verified TLS, bounded cleanup) | done | pass (15 passed) | waiting for key - 1 DB check skipped | `fec10f3`, `34b2e07`, `2afe767`, `afca72d`, `f868683`, `3557ec0`, `8447b60` |
 | T00 | Design system: tokens, theme, base components | **done** | **pass (67 passed)** | n/a (pure frontend) | `feat: design system tokens and components` |
-| T01 | Auth: magic-link sign-up/sign-in + session | **done** | **pass (12 API + 14 web)** | Supabase Auth (pending keys) | `feat: auth magic-link + JWT` |
+| T01 | Auth: magic-link sign-up/sign-in + session | **done** | **pass (12 API + 14 web)** | Supabase DB **pass** (require mode) | `feat: auth magic-link + JWT` |
 
-## Environment health (last doctor run: 2026-11-23, session 3 - all vars MISSING, every live check skipped)
+## Environment health (last doctor run: 2026-11-24, session 6 - keys SET)
 | Service | First needed by | Status |
 | --- | --- | --- |
-| Supabase (Auth + Postgres + pgvector) | First migration / RLS tests | waiting for key - dev project `Taleem.AI` is PAUSED; unpause before the first DB task |
+| Supabase (Auth + Postgres + pgvector) | First migration / RLS tests | **DB connected (require mode)** - project `Taleem.AI` active |
 | Cloudflare R2 | A1 source upload | not needed yet - account, bucket, scoped token not created |
 | Cloudflare Pages | First web deploy | not needed yet - project not created |
 | Google Cloud Run | API deploy | not needed yet - GCP project not created (billing card = LIVE CHECK) |
@@ -41,6 +41,7 @@
 - pytest config lives in root `pytest.ini` (`addopts = -m "not live"`), so `pytest -m live` is the only way live tests run; fast tests are in `tests/`, live tests in `tests/live/` (fast tests never import from live).
 - **Design system uses CSS custom properties (CSS variables) for all tokens — no hardcoded colors, spacing, or sizing. Theme switching via `[data-theme]` attribute on `<html>` with localStorage persistence.**
 - **Auth uses Supabase magic-link with JWT verification via HS256; logout clears cookies; `/v1/me` returns user profile from validated JWT.**
+- **Database live check passes with `sslmode=require` (pooler) using custom SSL context; `verify-full` pending correct Supabase pooler CA cert.**
 
 ## TDD evidence
 - RED: the focused security suite reproduced accepted duplicate TLS modes, cleanup timeout without forced termination, and an ambiguous-host parser differential; each case failed for the intended reason before its fix.
@@ -59,6 +60,7 @@
 - `scripts/doctor.py` can only prove credentials work; it does not verify free-tier quotas (RPM/TPM/email-per-hour) - those stay manual LIVE CHECKs.
 - Token tests verify CSS variable values via getComputedStyle in jsdom; actual browser rendering verified manually.
 - Magic-link test returns 400 when Supabase not configured; live check pending Supabase keys.
+- Database `verify-full` mode fails with pooler CA cert mismatch; using `require` mode for live check.
 
 ## Resume
 1. `git status` and `git branch`
