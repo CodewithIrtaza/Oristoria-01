@@ -1,0 +1,149 @@
+/* ============================================================================
+   DRAWER COMPONENT (Slide-over)
+   Per DESIGN.md §6
+   ============================================================================ */
+
+.drawer__backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background-color: rgba(26, 26, 46, 0.4);
+  z-index: var(--z-drawer);
+  animation: drawer-backdrop-fade var(--duration-normal) var(--easing-ease-out);
+}
+
+@keyframes drawer-backdrop-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--drawer-width);
+  max-width: 100vw;
+  background-color: var(--color-paper-elevated);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-drawer);
+  animation: drawer-enter var(--duration-normal) var(--easing-ease-out);
+  overflow: hidden;
+}
+
+@keyframes drawer-enter {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.drawer--left {
+  left: 0;
+}
+
+.drawer--left {
+  animation-name: drawer-enter-left;
+}
+
+@keyframes drawer-enter-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer__backdrop,
+  .drawer {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .drawer {
+    width: var(--drawer-mobile-width);
+  }
+}
+
+/* =============================================================================
+   HEADER
+   ============================================================================= */
+
+.drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--modal-padding);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-paper-elevated);
+  z-index: 1;
+}
+
+.drawer__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.drawer__description {
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-muted);
+  margin: var(--space-1) 0 0;
+}
+
+.drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--easing-ease-out),
+    color var(--duration-fast) var(--easing-ease-out);
+}
+
+.drawer__close:hover {
+  background-color: var(--color-paper-hover);
+  color: var(--color-ink);
+}
+
+.drawer__close:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+[data-theme="dark"] .drawer__close:focus-visible {
+  box-shadow: var(--shadow-focus-dark);
+}
+
+/* =============================================================================
+   BODY
+   ============================================================================= */
+
+.drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--modal-padding);
+}

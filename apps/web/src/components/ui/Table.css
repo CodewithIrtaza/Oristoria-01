@@ -1,0 +1,261 @@
+/* ============================================================================
+   TABLE COMPONENT
+   Per DESIGN.md §6
+   ============================================================================ */
+
+.table-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-paper-elevated);
+  border: var(--border-width-normal) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.table__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body);
+  color: var(--color-ink);
+}
+
+.table__caption {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink-muted);
+  text-align: left;
+  background-color: var(--color-paper-hover);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+}
+
+/* =============================================================================
+   HEADER
+   ============================================================================= */
+
+.table__th {
+  padding: var(--table-cell-padding);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink-muted);
+  text-align: left;
+  background-color: var(--color-paper-hover);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.table--sticky-header .table__th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table__th-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.table__th--checkbox {
+  padding: var(--space-2);
+  text-align: center;
+}
+
+/* =============================================================================
+   BODY
+   ============================================================================= */
+
+.table__tr {
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+  transition: background-color var(--duration-fast) var(--easing-ease-out);
+}
+
+.table__tr:last-child {
+  border-bottom: none;
+}
+
+.table__tr:hover:not(.table__tr--selected):not(.table__tr--skeleton) {
+  background-color: var(--color-paper);
+  box-shadow: var(--shadow-xs);
+}
+
+.table__tr--clickable {
+  cursor: pointer;
+}
+
+.table__tr--selected {
+  background-color: var(--color-accent-terracotta-subtle);
+}
+
+.table__tr--selected td:first-child {
+  border-left: 2px solid var(--color-accent-terracotta);
+}
+
+.table__td {
+  padding: var(--table-cell-padding);
+  vertical-align: middle;
+}
+
+.table__td--checkbox {
+  padding: var(--space-2);
+  text-align: center;
+}
+
+/* Skeleton row */
+.table__tr--skeleton .table__td {
+  padding: var(--table-cell-padding);
+}
+
+/* =============================================================================
+   CHECKBOX
+   ============================================================================= */
+
+.table__checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.table__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.table__checkbox-visual {
+  width: 18px;
+  height: 18px;
+  border: var(--border-width-normal) solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-paper-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color var(--duration-fast) var(--easing-ease-out),
+    background-color var(--duration-fast) var(--easing-ease-out);
+}
+
+.table__checkbox:checked + .table__checkbox-visual {
+  background-color: var(--color-accent-terracotta);
+  border-color: var(--color-accent-terracotta);
+}
+
+.table__checkbox:checked + .table__checkbox-visual::after {
+  content: "";
+  width: 5px;
+  height: 9px;
+  border: solid var(--color-ink-inverse);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.table__checkbox:focus-visible + .table__checkbox-visual {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+[data-theme="dark"] .table__checkbox:focus-visible + .table__checkbox-visual {
+  box-shadow: var(--shadow-focus-dark);
+}
+
+/* =============================================================================
+   EMPTY STATE
+   ============================================================================= */
+
+.table__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  color: var(--color-ink-muted);
+}
+
+.table__empty-icon {
+  font-size: var(--icon-size-2xl);
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.table__empty-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-2);
+}
+
+.table__empty-description {
+  font-size: var(--text-body-sm);
+  margin: 0;
+}
+
+/* =============================================================================
+   RESPONSIVE CARD STACK (Mobile < 640px)
+   ============================================================================= */
+
+.responsive-table__desktop {
+  display: block;
+}
+
+.responsive-table__mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .responsive-table__desktop {
+    display: none;
+  }
+
+  .responsive-table__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .responsive-table__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .responsive-table__card-checkbox {
+    align-self: flex-start;
+    margin-bottom: var(--space-2);
+  }
+
+  .responsive-table__card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+  }
+
+  .responsive-table__card-row:last-child {
+    border-bottom: none;
+  }
+
+  .responsive-table__card-label {
+    font-size: var(--text-label);
+    color: var(--color-ink-muted);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .responsive-table__card-value {
+    font-size: var(--text-body);
+    color: var(--color-ink);
+    text-align: right;
+    font-family: var(--font-mono);
+  }
+}

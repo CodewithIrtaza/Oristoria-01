@@ -1,0 +1,70 @@
+/* ============================================================================
+   ICON COMPONENT
+   Wrapper for Lucide icons with design token sizing/colors
+   Per DESIGN.md §7
+   ============================================================================ */
+
+/* Base styles applied via inline styles in component */
+/* This file provides utility classes for non-React icon usage */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  stroke-width: var(--icon-stroke-width);
+  stroke-linecap: var(--icon-stroke-linecap);
+  stroke-linejoin: var(--icon-stroke-linejoin);
+  color: var(--color-ink-muted);
+  transition: color var(--duration-fast) var(--easing-ease-out);
+}
+
+.icon--xs { width: var(--icon-size-xs); height: var(--icon-size-xs); }
+.icon--sm { width: var(--icon-size-sm); height: var(--icon-size-sm); }
+.icon--md { width: var(--icon-size-md); height: var(--icon-size-md); }
+.icon--lg { width: var(--icon-size-lg); height: var(--icon-size-lg); }
+.icon--xl { width: var(--icon-size-xl); height: var(--icon-size-xl); }
+.icon--2xl { width: var(--icon-size-2xl); height: var(--icon-size-2xl); }
+
+/* Color variants */
+.icon--default { color: var(--color-ink-muted); }
+.icon--muted { color: var(--color-ink-subtle); }
+.icon--accent { color: var(--color-accent-terracotta); }
+.icon--error { color: var(--color-error-crimson); }
+.icon--success { color: var(--color-success-teal); }
+.icon--inverse { color: var(--color-ink-inverse); }
+
+/* Hover states */
+.icon:hover {
+  color: var(--color-ink);
+}
+
+.icon--accent:hover {
+  color: var(--color-accent-terracotta-hover);
+}
+
+.icon--error:hover {
+  color: var(--color-error-crimson);
+}
+
+/* Disabled */
+.icon--disabled {
+  color: var(--color-ink-subtle);
+  pointer-events: none;
+}
+
+/* Spin animation for loading */
+.icon--spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+@keyframes icon-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon--spin {
+    animation: none;
+  }
+}

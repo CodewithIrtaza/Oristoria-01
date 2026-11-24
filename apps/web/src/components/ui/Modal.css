@@ -1,0 +1,149 @@
+/* ============================================================================
+   MODAL COMPONENT
+   Per DESIGN.md §6
+   ============================================================================ */
+
+.modal__backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background-color: rgba(26, 26, 46, 0.4);
+  z-index: var(--z-modal-backdrop);
+  animation: modal-backdrop-fade var(--duration-normal) var(--easing-ease-out);
+}
+
+@keyframes modal-backdrop-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-height: 90vh;
+  background-color: var(--color-paper-elevated);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modal-enter var(--duration-normal) var(--easing-ease-out);
+}
+
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal__backdrop,
+  .modal {
+    animation: none;
+  }
+}
+
+/* Sizes */
+.modal--sm { max-width: 24rem; }   /* 384px */
+.modal--md { max-width: 32rem; }   /* 512px */
+.modal--lg { max-width: 48rem; }   /* 768px */
+.modal--xl { max-width: 64rem; }   /* 1024px */
+
+/* =============================================================================
+   HEADER
+   ============================================================================= */
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--modal-padding);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+.modal__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  margin: 0;
+  flex: 1;
+}
+
+.modal__description {
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-muted);
+  margin: var(--space-1) 0 0;
+}
+
+.modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--easing-ease-out),
+    color var(--duration-fast) var(--easing-ease-out);
+}
+
+.modal__close:hover {
+  background-color: var(--color-paper-hover);
+  color: var(--color-ink);
+}
+
+.modal__close:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+[data-theme="dark"] .modal__close:focus-visible {
+  box-shadow: var(--shadow-focus-dark);
+}
+
+/* =============================================================================
+   BODY
+   ============================================================================= */
+
+.modal__body {
+  padding: var(--modal-padding);
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
+
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--modal-padding) var(--modal-padding);
+  border-top: var(--border-width-normal) solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+/* Right-aligned actions - primary rightmost */
+.modal__footer > *:last-child {
+  margin-left: auto;
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-lowest":"#ffffff","on-surface-variant":"#55433d","on-error":"#ffffff","info-slate-subtle":"#f1f5f9","on-error-container":"#93000a","accent-terracotta-subtle":"#fdf2ef","paper-pressed":"#eeeeee","accent-terracotta":"#b85c3d","paper":"#fafafa","on-secondary-container":"#63627a","surface-container":"#eeeeee","accent-terracotta-hover":"#9d4d33","ink-muted":"#4a4a6a","on-secondary-fixed-variant":"#45455b","success-teal":"#0d9488","ink":"#1a1a2e","on-primary-fixed-variant":"#7b2e13","primary-fixed-dim":"#ffb59d","on-primary":"#ffffff","on-primary-container":"#ffffff","outline-variant":"#dbc1b9","secondary-container":"#e2e0fc","surface-container-highest":"#e2e2e2","warning-amber":"#c4963a","outline":"#88726c","error-crimson":"#b91c1c","border-emphasis":"#d0d0d0","success-teal-subtle":"#e6fffb","ink-inverse":"#ffffff","on-secondary":"#ffffff","tertiary-container":"#00857a","error-container":"#ffdad6","on-tertiary-container":"#ffffff","tertiary-fixed":"#89f5e7","on-background":"#1a1c1c","secondary":"#5d5c74","on-primary-fixed":"#390b00","primary-fixed":"#ffdbd0","tertiary-fixed-dim":"#6bd8cb","secondary-fixed-dim":"#c6c4df","border-focus":"#b85c3d","on-tertiary-fixed":"#00201d","surface-tint":"#9a4528","on-secondary-fixed":"#1a1a2e","error":"#ba1a1a","inverse-surface":"#2f3131","ink-subtle":"#8a8a9a","primary":"#994427","paper-elevated":"#ffffff","secondary-fixed":"#e2e0fc","surface-container-low":"#f3f3f3","surface-container-high":"#e8e8e8","paper-hover":"#f5f5f5","surface-bright":"#f9f9f9","warning-amber-subtle":"#fffbeb","primary-container":"#b85c3d","inverse-on-surface":"#f0f1f1","error-crimson-subtle":"#fef2f2","background":"#f9f9f9","accent-terracotta-pressed":"#85402b","border-subtle":"#e5e5e5","info-slate":"#475569","on-surface":"#1a1c1c","border-error":"#b91c1c","tertiary":"#006a61","on-tertiary-fixed-variant":"#005049","surface":"#f9f9f9","surface-dim":"#dadada","surface-variant":"#e2e2e2","inverse-primary":"#ffb59d","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-xl":"2rem","gutter-lg":"2rem","space-sm":"0.5rem","margin-mobile":"1rem","space-md":"1rem","gutter":"1.5rem","margin-desktop":"2rem","margin":"1.5rem","space-xs":"0.25rem","gutter-sm":"1rem"},"fontFamily":{"body-md":["Inter"],"display-sm":["Space Grotesk"],"code-sm":["JetBrains Mono"],"body-xs":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Space Grotesk"],"display-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Inter"],"display-md":["Space Grotesk"],"label-xs":["Inter"],"display-xl":["Space Grotesk"],"headline-md":["Space Grotesk"],"code-md":["JetBrains Mono"],"title-md":["Space Grotesk"],"label-lg":["Inter"],"headline-lg":["Space Grotesk"]},"fontSize":{"body-md":["16px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"400"}],"display-sm":["24px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"600"}],"code-sm":["12px",{"lineHeight":"18px","letterSpacing":"0","fontWeight":"400"}],"body-xs":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"46px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"27px","letterSpacing":"0","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"29px","letterSpacing":"0","fontWeight":"400"}],"display-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-xs":["10px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"62px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"31px","letterSpacing":"0","fontWeight":"600"}],"code-md":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"25px","letterSpacing":"0","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"21px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg":["30px",{"lineHeight":"39px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-paper-elevated shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between pt-space-md pb-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-md flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[26px]">auto_stories</span><span class="font-headline-sm text-headline-sm text-ink tracking-tight">Oristoria</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-accent-terracotta-subtle text-accent-terracotta font-label-lg text-label-lg rounded"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-paper-hover hover:text-on-surface transition-colors" data-path="dashboard-workspace-home" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Workspace Home</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-paper-hover hover:text-on-surface transition-colors" data-path="sources" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Sources</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-paper-hover hover:text-on-surface transition-colors" data-path="chat" href="#"><span class="material-symbols-outlined text-[20px]">forum</span><span>Chat</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-paper-hover hover:text-on-surface transition-colors" data-path="artifacts" href="#"><span class="material-symbols-outlined text-[20px]">note_stack</span><span>Artifacts</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-paper-hover hover:text-on-surface transition-colors" data-path="runs" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span>Runs</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded font-label-lg text-label-lg text-on-surface-variant hover:bg-paper-hover hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between font-label-xs text-label-xs text-ink-muted"><span class="uppercase font-code-sm text-code-sm">Pro Research</span><span class="material-symbols-outlined text-warning-amber text-[16px]">workspace_premium</span></div><p class="font-body-xs text-body-xs text-ink-muted">Access unmetered archival synthesis.</p><a class="mt-space-xs w-full py-space-xs px-space-sm bg-primary hover:bg-accent-terracotta-hover text-on-primary font-label-md text-label-md rounded text-center transition-colors" data-path="upgrade-pro" href="#">Upgrade Plan</a></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-paper-elevated rounded shadow-[0_1px_8px_rgba(0,0,0,0.04)] cursor-pointer"><span class="material-symbols-outlined text-primary text-[18px]">library_books</span><span class="font-label-md text-label-md text-ink font-semibold">My Research</span><span class="material-symbols-outlined text-ink-subtle text-[18px]">expand_more</span></div><div class="flex items-center gap-space-xs flex-1 bg-paper-elevated px-space-sm py-space-xs rounded shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-ink-subtle text-[18px]">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-ink placeholder-ink-subtle focus:outline-none" placeholder="Search references, synthesis, notes... (Press ⌘K)" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-success-teal-subtle rounded-full"><span class="w-2 h-2 rounded-full bg-success-teal"></span><span class="font-code-sm text-code-sm text-success-teal font-medium">Usage: 48/100 Syntheses</span></div><button aria-label="Toggle Theme" class="w-8 h-8 rounded flex items-center justify-center text-ink-muted hover:bg-paper-hover hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface"><div class="w-full px-space-lg py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Welcome & Orchestration Canvas -->
+<section class="relative w-full rounded-xl bg-paper-elevated shadow-sm p-space-lg overflow-hidden">
+<div class="absolute -right-16 -top-24 w-80 h-80 rounded-full bg-accent-terracotta-subtle/50 pointer-events-none blur-3xl"></div>
+<div class="absolute right-32 bottom-0 w-48 h-48 rounded-full bg-success-teal-subtle/40 pointer-events-none blur-2xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs font-code-sm text-code-sm text-accent-terracotta uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-terracotta"></span>
+<span>Archival Synthesis Engine</span>
+<span class="text-ink-subtle">/</span>
+<span class="text-ink-muted">v2.4.9</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-ink font-semibold tracking-tight">
+          Welcome back, Dr. Aris
+        </h1>
+<p class="font-body-md text-body-md text-ink-muted">
+          Workspace: <span class="text-ink font-medium">My Research</span> • 3 sources synchronized with verified citations
+        </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs md:pt-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-lg text-label-lg shadow-sm transition-all transform active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New chat</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-accent-terracotta-subtle hover:bg-accent-terracotta/10 text-accent-terracotta font-label-lg text-label-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Upload source</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-paper-hover hover:bg-surface-container-high text-ink font-label-lg text-label-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-accent-terracotta">bolt</span>
+<span>Run workflow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Metrics & Status Array -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md w-full">
+<!-- Card 1: Sources -->
+<div class="group relative rounded-xl bg-paper-elevated p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-accent-terracotta-subtle flex items-center justify-center text-accent-terracotta">
+<span class="material-symbols-outlined text-[22px]">folder_open</span>
+</div>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-code-sm text-code-sm font-medium">
+          All indexed
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-md text-display-md text-ink font-bold">3</span>
+<span class="font-body-sm text-body-sm text-ink-muted">documents</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted mt-space-xs truncate">
+          3 uploaded • 142 pgs total
+        </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-ink-subtle font-code-sm text-code-sm">
+<span>Embeddings</span>
+<span class="text-ink font-medium">1,480 chunks</span>
+</div>
+</div>
+<!-- Card 2: Conversations -->
+<div class="group relative rounded-xl bg-paper-elevated p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/60 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+</div>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container text-ink-muted font-code-sm text-code-sm">
+          Active session
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-md text-display-md text-ink font-bold">2</span>
+<span class="font-body-sm text-body-sm text-ink-muted">dialogues</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted mt-space-xs truncate">
+          2 active research threads
+        </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-ink-subtle font-code-sm text-code-sm">
+<span>Last interaction</span>
+<span class="text-ink font-medium">2h ago</span>
+</div>
+</div>
+<!-- Card 3: Artifacts -->
+<div class="group relative rounded-xl bg-paper-elevated p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-accent-terracotta-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-code-sm text-code-sm">
+          Published
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-md text-display-md text-ink font-bold">1</span>
+<span class="font-body-sm text-body-sm text-ink-muted">artifact</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted mt-space-xs truncate">
+          1 deliverable produced
+        </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-ink-subtle font-code-sm text-code-sm">
+<span>Latest</span>
+<span class="text-ink font-medium truncate max-w-[120px]">Policy Brief v1</span>
+</div>
+</div>
+<!-- Card 4: Usage Limit -->
+<div class="group relative rounded-xl bg-paper-elevated p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-warning-amber-subtle flex items-center justify-center text-warning-amber">
+<span class="material-symbols-outlined text-[22px]">trending_up</span>
+</div>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-warning-amber-subtle text-warning-amber font-code-sm text-code-sm font-semibold">
+          Free Plan
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-md text-display-md text-ink font-bold">3</span>
+<span class="font-body-sm text-body-sm text-ink-muted">/ 10 answers</span>
+</div>
+<span class="font-code-sm text-code-sm text-warning-amber font-semibold">30%</span>
+</div>
+<!-- Metric Progress Bar -->
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-space-xs overflow-hidden">
+<div class="bg-warning-amber h-full rounded-full transition-all duration-500" style="width: 30%;"></div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-ink-subtle font-code-sm text-code-sm">
+<span>Cycle resets</span>
+<span class="text-ink font-medium">in 18 days</span>
+</div>
+</div>
+</section>
+<!-- Editorial Main Split: Activity vs Synthesis Queue -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Primary Panel: Recent Activity Ledger (7 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="rounded-xl bg-paper-elevated shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-title-md text-title-md text-ink font-semibold tracking-tight">Recent Activity</h2>
+<p class="font-body-xs text-body-xs text-ink-muted">Continuous audit log of queries, extractions, and compiled notes</p>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-accent-terracotta hover:text-accent-terracotta-hover transition-colors" href="#">
+<span>View all history</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Activity Ledger Rows -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Row 1: Chat -->
+<div class="group flex items-start justify-between p-space-md rounded-lg bg-surface hover:bg-paper-hover transition-all duration-150 cursor-pointer">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/70 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">chat_bubble_outline</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg font-medium text-ink group-hover:text-primary transition-colors">
+                    Chat: Renewable energy policy analysis
+                  </span>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-accent-terracotta-subtle text-accent-terracotta font-code-sm text-code-sm">
+                    Active
+                  </span>
+</div>
+<div class="flex items-center gap-space-xs text-ink-muted font-body-sm text-body-sm mt-0.5">
+<span class="font-code-sm text-code-sm text-success-teal font-medium">14 citations verified</span>
+<span class="text-ink-subtle">•</span>
+<span>8 messages exchanged</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-code-sm text-code-sm text-ink-subtle">2h ago</span>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle group-hover:text-ink transition-colors mt-space-xs">chevron_right</span>
+</div>
+</div>
+<!-- Row 2: Source PDF -->
+<div class="group flex items-start justify-between p-space-md rounded-lg bg-surface hover:bg-paper-hover transition-all duration-150 cursor-pointer">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-accent-terracotta-subtle text-accent-terracotta flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg font-medium text-ink group-hover:text-primary transition-colors">
+                    Source: renewable-energy-policy.pdf
+                  </span>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-code-sm text-code-sm font-medium">
+                    Ready
+                  </span>
+</div>
+<div class="flex items-center gap-space-xs text-ink-muted font-body-sm text-body-sm mt-0.5">
+<span>12 pages</span>
+<span class="text-ink-subtle">•</span>
+<span class="font-code-sm text-code-sm">42 vector chunks</span>
+<span class="text-ink-subtle">•</span>
+<span>2.3 MB</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-code-sm text-code-sm text-ink-subtle">3h ago</span>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle group-hover:text-ink transition-colors mt-space-xs">chevron_right</span>
+</div>
+</div>
+<!-- Row 3: Artifact Deliverable -->
+<div class="group flex items-start justify-between p-space-md rounded-lg bg-surface hover:bg-paper-hover transition-all duration-150 cursor-pointer">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-success-teal-subtle text-success-teal flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">task</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg font-medium text-ink group-hover:text-primary transition-colors">
+                    Artifact: Policy Brief v1 (Executive Summary)
+                  </span>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-code-sm text-code-sm font-medium">
+                    Completed
+                  </span>
+</div>
+<div class="flex items-center gap-space-xs text-ink-muted font-body-sm text-body-sm mt-0.5">
+<span>Markdown &amp; PDF deliverable</span>
+<span class="text-ink-subtle">•</span>
+<span class="font-code-sm text-code-sm font-medium text-ink">3,200 words</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-code-sm text-code-sm text-ink-subtle">1d ago</span>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle group-hover:text-ink transition-colors mt-space-xs">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Citation Audit Strip -->
+<div class="mt-space-xs p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-success-teal text-[20px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-ink font-medium">Zero hallucination threshold active</span>
+<span class="font-body-xs text-body-xs text-ink-muted">All syntheses enforced with page-anchored reference markers</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm text-ink-muted self-start sm:self-center">Pass Rate: 100%</span>
+</div>
+</div>
+<!-- Quick Ingestion Drag-and-Drop Area -->
+<div class="relative group rounded-xl bg-paper-elevated p-space-lg shadow-sm transition-all duration-200 text-center flex flex-col items-center justify-center cursor-pointer hover:bg-accent-terracotta-subtle/30" id="drop-zone">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<h3 class="font-title-md text-title-md text-ink font-semibold mt-space-sm">
+          Expand Your Scholarly Index
+        </h3>
+<p class="font-body-sm text-body-sm text-ink-muted max-w-md mt-space-xs">
+          Drag and drop PDF monographs, white papers, or JSTOR extracts directly into this workspace for real-time vectorization.
+        </p>
+<div class="mt-space-md flex items-center gap-space-sm font-code-sm text-code-sm text-ink-subtle">
+<span class="px-space-xs py-0.5 rounded bg-surface-container">PDF</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container">EPUB</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container">DOCX</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container">Max 64MB</span>
+</div>
+</div>
+</div>
+<!-- Secondary Panel: Citation Index & Archival Context (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Current Archival Index Snapshot -->
+<div class="rounded-xl bg-paper-elevated shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-ink font-semibold">Indexed Sources</h2>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container text-ink-muted">3 Files</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Source Item 1 -->
+<div class="p-space-sm rounded-lg bg-surface flex items-start gap-space-sm hover:bg-paper-hover transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-ink font-medium truncate">renewable-energy-policy.pdf</span>
+<span class="font-code-sm text-code-sm text-ink-muted">12 pages • Oct 2023</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-success-teal shrink-0 mt-2" title="Synchronized"></span>
+</div>
+<!-- Source Item 2 -->
+<div class="p-space-sm rounded-lg bg-surface flex items-start gap-space-sm hover:bg-paper-hover transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">article</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-ink font-medium truncate">grid_modernization_review.pdf</span>
+<span class="font-code-sm text-code-sm text-ink-muted">94 pages • Sep 2023</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-success-teal shrink-0 mt-2" title="Synchronized"></span>
+</div>
+<!-- Source Item 3 -->
+<div class="p-space-sm rounded-lg bg-surface flex items-start gap-space-sm hover:bg-paper-hover transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">dataset</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-ink font-medium truncate">eu_energy_subsidies_table.csv</span>
+<span class="font-code-sm text-code-sm text-ink-muted">36 pages equiv • Aug 2023</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-success-teal shrink-0 mt-2" title="Synchronized"></span>
+</div>
+</div>
+<button class="w-full py-space-xs rounded bg-surface hover:bg-surface-container-high text-ink font-label-md text-label-md transition-colors text-center" type="button">
+          Manage Archival Sources
+        </button>
+</div>
+<!-- Scholarly Method & Model Configuration -->
+<div class="rounded-xl bg-paper-elevated shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-ink font-semibold">
+<span class="material-symbols-outlined text-accent-terracotta text-[18px]">psychology</span>
+<span>Synthesis Parameters</span>
+</div>
+<div class="space-y-space-sm text-body-sm text-ink-muted">
+<div class="flex justify-between items-center py-space-xs">
+<span>Inference Model</span>
+<span class="font-code-sm text-code-sm text-ink font-medium px-space-xs py-0.5 bg-surface-container rounded">Claude 3.5 Sonnet</span>
+</div>
+<div class="flex justify-between items-center py-space-xs">
+<span>Citation Strictness</span>
+<span class="font-code-sm text-code-sm text-success-teal font-medium">Archival Anchored</span>
+</div>
+<div class="flex justify-between items-center py-space-xs">
+<span>Retrieval Top-K</span>
+<span class="font-code-sm text-code-sm text-ink">12 Chunks / Query</span>
+</div>
+</div>
+<!-- Research Workspace Metadata Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-ink-subtle font-code-sm text-code-sm">
+<span>ID: WS-8849-ORD</span>
+<button class="text-accent-terracotta hover:underline font-label-xs text-label-xs uppercase tracking-wide">Copy Meta</button>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted">
+            Created by Dr. Aris • Shared with 0 collaborators
+          </p>
+</div>
+</div>
+<!-- Quick Research Prompt Assist -->
+<div class="rounded-xl bg-accent-terracotta-subtle/80 p-space-lg flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+<span class="font-semibold text-body-lg">Suggested Prompt</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mt-space-xs">
+          “Synthesize contradictions between the EU subsidy roadmap and regional grid deployment timelines.”
+        </p>
+<button class="mt-space-sm self-start inline-flex items-center gap-space-xs text-primary font-label-md text-label-md font-semibold hover:text-accent-terracotta-hover transition-colors" type="button">
+<span>Apply to new chat</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for drop zone highlighting
+  const dropZone = document.getElementById('drop-zone');
+  if (dropZone) {
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.add('bg-accent-terracotta-subtle');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('bg-accent-terracotta-subtle');
+      }, false);
+    });
+  }
+</script></div></main></div></body></html>

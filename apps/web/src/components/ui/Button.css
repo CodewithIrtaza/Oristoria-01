@@ -1,0 +1,231 @@
+/* ============================================================================
+   BUTTON COMPONENT
+   All variants, sizes, and states per DESIGN.md §6
+   ============================================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--btn-gap);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-normal) var(--easing-ease-out),
+    color var(--duration-normal) var(--easing-ease-out),
+    box-shadow var(--duration-normal) var(--easing-ease-out),
+    transform var(--duration-fast) var(--easing-ease-out),
+    opacity var(--duration-fast) var(--easing-ease-out);
+  white-space: nowrap;
+  text-decoration: none;
+  min-height: 44px; /* Minimum tap target */
+  min-width: 44px;
+}
+
+/* =============================================================================
+   SIZES
+   ============================================================================= */
+
+.btn--sm {
+  height: var(--btn-height-sm);
+  padding: var(--btn-padding-sm);
+  font-size: var(--text-body-sm);
+  gap: calc(var(--btn-gap) * 0.75);
+}
+
+.btn--md {
+  height: var(--btn-height-md);
+  padding: var(--btn-padding-md);
+  font-size: var(--text-body);
+}
+
+.btn--lg {
+  height: var(--btn-height-lg);
+  padding: var(--btn-padding-lg);
+  font-size: var(--text-body-lg);
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+/* =============================================================================
+   VARIANTS
+   ============================================================================= */
+
+/* Primary — accent-terracotta background, ink-inverse text */
+.btn--primary {
+  background-color: var(--color-accent-terracotta);
+  color: var(--color-ink-inverse);
+}
+
+.btn--primary:hover:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-accent-terracotta-hover);
+}
+
+.btn--primary:active:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-accent-terracotta-pressed);
+  transform: scale(0.98);
+}
+
+/* Secondary (Tonal) — accent-terracotta-subtle background, accent-terracotta text */
+.btn--secondary {
+  background-color: var(--color-accent-terracotta-subtle);
+  color: var(--color-accent-terracotta);
+}
+
+.btn--secondary:hover:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-accent-terracotta);
+  color: var(--color-ink-inverse);
+}
+
+.btn--secondary:active:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-accent-terracotta-pressed);
+  transform: scale(0.98);
+}
+
+/* Ghost — transparent background, ink text */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-ink);
+}
+
+.btn--ghost:hover:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-paper-hover);
+}
+
+.btn--ghost:active:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-paper-pressed);
+  transform: scale(0.98);
+}
+
+/* Destructive — transparent background, error-crimson text, error-crimson border */
+.btn--destructive {
+  background-color: transparent;
+  color: var(--color-error-crimson);
+  border: var(--border-width-normal) solid var(--color-error-crimson);
+}
+
+.btn--destructive:hover:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-error-crimson-subtle);
+}
+
+.btn--destructive:active:not(:disabled):not(.btn--loading) {
+  background-color: var(--color-error-crimson);
+  color: var(--color-ink-inverse);
+  transform: scale(0.98);
+}
+
+/* Destructive Filled — error-crimson background, ink-inverse text */
+.btn--destructive-filled {
+  background-color: var(--color-error-crimson);
+  color: var(--color-ink-inverse);
+}
+
+.btn--destructive-filled:hover:not(:disabled):not(.btn--loading) {
+  background-color: #991818; /* darker error-crimson */
+}
+
+.btn--destructive-filled:active:not(:disabled):not(.btn--loading) {
+  background-color: #7f1515;
+  transform: scale(0.98);
+}
+
+/* =============================================================================
+   FOCUS RING
+   ============================================================================= */
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+[data-theme="dark"] .btn:focus-visible {
+  box-shadow: var(--shadow-focus-dark);
+}
+
+/* =============================================================================
+   DISABLED STATE
+   ============================================================================= */
+
+.btn--disabled,
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =============================================================================
+   LOADING STATE
+   ============================================================================= */
+
+.btn--loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.btn__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn__spinner-icon {
+  width: 1em;
+  height: 1em;
+  animation: btn-spin 1s linear infinite;
+}
+
+@keyframes btn-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn__spinner-icon {
+    animation: none;
+  }
+}
+
+.btn__spinner-path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+/* =============================================================================
+   ICON
+   ============================================================================= */
+
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.btn__icon--sm { font-size: var(--btn-icon-size-sm); }
+.btn__icon--md { font-size: var(--btn-icon-size-md); }
+.btn__icon--lg { font-size: var(--btn-icon-size-lg); }
+
+/* =============================================================================
+   PRESSED STATE (JavaScript toggled)
+   ============================================================================= */
+
+.btn--pressed {
+  transform: scale(0.98);
+}
+
+/* =============================================================================
+   TEXT WRAPPER
+   ============================================================================= */
+
+.btn__text {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}

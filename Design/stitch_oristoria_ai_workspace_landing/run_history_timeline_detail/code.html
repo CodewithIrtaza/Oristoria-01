@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-container":"#63627a","success-teal":"#0d9488","paper":"#fafafa","on-tertiary-container":"#ffffff","surface-container":"#eeeeee","on-background":"#1a1c1c","secondary":"#5d5c74","on-primary-fixed":"#390b00","primary":"#994427","accent-terracotta-hover":"#9d4d33","ink-inverse":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#c6c4df","on-tertiary-fixed":"#00201d","on-tertiary":"#ffffff","accent-terracotta":"#b85c3d","surface-container-low":"#f3f3f3","error-crimson":"#b91c1c","info-slate-subtle":"#f1f5f9","tertiary":"#006a61","primary-container":"#b85c3d","tertiary-container":"#00857a","surface-container-highest":"#e2e2e2","secondary-container":"#e2e0fc","on-secondary":"#ffffff","surface-container-high":"#e8e8e8","background":"#f9f9f9","on-secondary-fixed-variant":"#45455b","error-container":"#ffdad6","on-error":"#ffffff","border-focus":"#b85c3d","on-tertiary-fixed-variant":"#005049","border-subtle":"#e5e5e5","border-error":"#b91c1c","outline":"#88726c","surface-variant":"#e2e2e2","warning-amber":"#c4963a","accent-terracotta-pressed":"#85402b","on-primary-fixed-variant":"#7b2e13","error-crimson-subtle":"#fef2f2","on-primary-container":"#ffffff","error":"#ba1a1a","inverse-primary":"#ffb59d","primary-fixed-dim":"#ffb59d","ink-subtle":"#8a8a9a","on-secondary-fixed":"#1a1a2e","primary-fixed":"#ffdbd0","tertiary-fixed-dim":"#6bd8cb","surface-dim":"#dadada","paper-pressed":"#eeeeee","surface-container-lowest":"#ffffff","warning-amber-subtle":"#fffbeb","paper-hover":"#f5f5f5","inverse-surface":"#2f3131","ink":"#1a1a2e","accent-terracotta-subtle":"#fdf2ef","on-surface":"#1a1c1c","ink-muted":"#4a4a6a","surface-tint":"#9a4528","success-teal-subtle":"#e6fffb","tertiary-fixed":"#89f5e7","on-surface-variant":"#55433d","info-slate":"#475569","inverse-on-surface":"#f0f1f1","on-error-container":"#93000a","border-emphasis":"#d0d0d0","surface":"#f9f9f9","surface-bright":"#f9f9f9","outline-variant":"#dbc1b9","secondary-fixed":"#e2e0fc","paper-elevated":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","space-lg":"1.5rem","margin":"1.5rem","margin-desktop":"2rem","gutter-lg":"2rem","space-md":"1rem","gutter":"1.5rem","gutter-sm":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem"},"fontFamily":{"display-sm":["Space Grotesk"],"label-lg":["Inter"],"headline-lg-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-lg":["Space Grotesk"],"body-md":["Inter"],"title-md":["Space Grotesk"],"code-md":["JetBrains Mono"],"body-xs":["Inter"],"body-lg":["Inter"],"label-xs":["Inter"],"headline-sm":["Space Grotesk"],"label-md":["Inter"],"code-sm":["JetBrains Mono"],"display-md":["Space Grotesk"],"headline-md":["Space Grotesk"],"display-xl":["Space Grotesk"],"body-sm":["Inter"]},"fontSize":{"display-sm":["24px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"21px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"39px","letterSpacing":"-0.005em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"46px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"25px","letterSpacing":"0","fontWeight":"600"}],"code-md":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"body-xs":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"29px","letterSpacing":"0","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"27px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"code-sm":["12px",{"lineHeight":"18px","letterSpacing":"0","fontWeight":"400"}],"display-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"31px","letterSpacing":"0","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"62px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}]}}}}</script></head><body class="bg-paper font-body-md text-body-md text-ink min-h-screen"><header class="fixed top-0 left-0 right-0 h-16 bg-paper-elevated/90 backdrop-blur-xl border-b border-border-subtle z-50 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-accent-terracotta-subtle flex items-center justify-center text-accent-terracotta"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-title-md text-title-md text-ink tracking-tight">Oristoria</span></div><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ink-subtle text-[18px]">search</span><input class="w-full h-10 pl-9 pr-12 rounded bg-paper border border-border-subtle font-body-sm text-body-sm text-ink placeholder:text-ink-subtle focus:border-border-focus focus:ring-2 focus:ring-accent-terracotta/20 focus:outline-none transition-all" placeholder="Search references, synthesis, notes..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high border border-border-subtle font-code-sm text-code-sm text-ink-muted"><span>⌘</span><span>K</span></div></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-sm px-space-sm py-1 rounded bg-paper border border-border-subtle"><div class="flex flex-col text-right"><span class="font-label-xs text-label-xs text-ink-subtle uppercase">LLM Compute</span><span class="font-code-sm text-code-sm text-ink font-medium">84.2k / 100k</span></div><div class="w-12 h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full bg-accent-terracotta rounded-full" style="width: 84%"></div></div></div><button aria-label="Toggle theme" class="w-9 h-9 rounded flex items-center justify-center text-ink-muted hover:text-ink hover:bg-paper-hover transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="h-6 w-px bg-border-subtle"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-paper-elevated border-r border-border-subtle z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-xs px-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Workspace</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta"><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="workspace-home" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Workspace Home</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="sources-list" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">library_books</span><span>Sources</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">148</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="source-detail" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">description</span><span>Source Detail</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="chat-conversation" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">chat_bubble</span><span>Chat</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle text-accent-terracotta">Live</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="research-workflow" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_tree</span><span>Workflow Run</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-success-teal-subtle text-success-teal">Active</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded transition-colors bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta" data-path="run-history" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">history</span><span>Run History</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">29</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="artifacts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Artifacts</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div><div class="px-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low border border-border-subtle flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-ink font-semibold">Academic Tier</span><span class="font-code-sm text-code-sm text-accent-terracotta bg-accent-terracotta-subtle px-1 rounded">PRO</span></div><p class="font-body-xs text-body-xs text-ink-subtle">Unlimited context windows, multi-agent runs &amp; persistent exports.</p><button class="mt-1 w-full h-8 rounded bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button"><span>Upgrade Seat</span><span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-paper px-margin-desktop"><div class="flex flex-col w-full relative">
+<!-- Top Level Header Row -->
+<div class="mb-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-ink tracking-tight">Run History</h1>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container-high text-ink-muted">v2.4 Engine</span>
+</div>
+<p class="font-body-sm text-body-sm text-ink-subtle mt-0.5">
+        5 runs recorded <span class="mx-1">•</span> <span class="text-success-teal font-medium">2 completed</span> <span class="mx-1">•</span> <span class="text-accent-terracotta font-medium">1 running</span> <span class="mx-1">•</span> <span class="text-error-crimson font-medium">1 failed</span> <span class="mx-1">•</span> <span class="text-info-slate font-medium">1 cancelled</span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-3.5 rounded-md bg-paper-elevated text-ink hover:bg-paper-hover transition-colors font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-ink-subtle">filter_list</span>
+<span>Filter Runs</span>
+</button>
+<button class="h-10 px-4 rounded-md bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary transition-all duration-150 font-label-md text-label-md flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+<span>Start research workflow</span>
+</button>
+</div>
+</div>
+<!-- Metric Strip / Research Canvas Overview -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="p-space-md rounded-lg bg-paper-elevated shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Total Compute Time</span>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle">timer</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display-sm text-display-sm text-ink">9m 49s</span>
+<span class="font-code-sm text-code-sm text-success-teal">+14% eff.</span>
+</div>
+<div class="mt-2 w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-success-teal h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-paper-elevated shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Tokens Synthesized</span>
+<span class="material-symbols-outlined text-[18px] text-accent-terracotta">memory</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display-sm text-display-sm text-ink">14,280</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">tokens</span>
+</div>
+<div class="mt-2 w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-accent-terracotta h-full w-1/2 rounded-full"></div>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-paper-elevated shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Citation Verifiability</span>
+<span class="material-symbols-outlined text-[18px] text-success-teal">verified</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display-sm text-display-sm text-ink">98.4%</span>
+<span class="font-code-sm text-code-sm text-success-teal">Zero hallucination</span>
+</div>
+<div class="mt-2 w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-success-teal h-full w-[98%] rounded-full"></div>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-paper-elevated shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Archived Deliverables</span>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle">inventory_2</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-display-sm text-display-sm text-ink">4 Briefs</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">Markdown/LaTeX</span>
+</div>
+<div class="mt-2 w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full w-4/5 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Primary Split Stage: Table + Drawer Overlay Container -->
+<div class="flex flex-col lg:flex-row gap-space-lg items-start relative">
+<!-- Runs Table (Desktop/Responsive) -->
+<div class="flex-1 w-full rounded-lg bg-paper-elevated shadow-sm overflow-hidden transition-all duration-200">
+<!-- Table Filter Toolbar -->
+<div class="px-space-lg py-space-md bg-paper-elevated flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-title-md text-title-md text-ink">Recent Executions</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-ink-muted">All Workflows</span>
+</div>
+<div class="flex items-center gap-space-xs text-ink-subtle">
+<button class="p-1 rounded hover:bg-paper-hover text-ink-muted transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+<button class="p-1 rounded hover:bg-paper-hover text-ink-muted transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-ink-subtle font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-3 pl-space-lg pr-4 font-semibold" scope="col">Workflow</th>
+<th class="py-3 px-4 font-semibold" scope="col">Question / Synthesis Task</th>
+<th class="py-3 px-4 font-semibold" scope="col">Status</th>
+<th class="py-3 px-4 font-semibold" scope="col">Steps</th>
+<th class="py-3 px-4 font-semibold" scope="col">Duration</th>
+<th class="py-3 px-4 font-semibold" scope="col">Started</th>
+<th class="py-3 pr-space-lg pl-4 font-semibold text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Selected / Drawer Target -->
+<tr class="cursor-pointer bg-accent-terracotta-subtle/70 hover:bg-accent-terracotta-subtle transition-colors group" id="row-run-9024" onclick="openDrawer('run-9024')">
+<td class="py-4 pl-space-lg pr-4 align-top">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-terracotta"></span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-accent-terracotta">Research Brief</span>
+<span class="font-code-sm text-[11px] text-ink-subtle">#RUN-9024</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 max-w-xs align-top">
+<p class="text-ink font-medium truncate group-hover:text-accent-terracotta transition-colors">
+                  Economic impacts of RPS on wholesale electricity...
+                </p>
+<p class="font-body-xs text-body-xs text-ink-subtle line-clamp-1 mt-0.5">
+                  Assessing regional price elasticities, dispatch curve shifting &amp; storage arbitrage.
+                </p>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-success-teal-subtle text-success-teal font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Completed
+                </span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm font-medium text-ink">5 / 5 steps</span>
+<div class="w-20 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-success-teal rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-code-sm text-code-sm text-ink-muted">3m 42s</span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-body-xs text-body-xs text-ink-subtle">2h ago</span>
+</td>
+<td class="py-4 pr-space-lg pl-4 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-sm" onclick="event.stopPropagation()">
+<button class="text-accent-terracotta hover:text-accent-terracotta-hover font-label-md text-label-md font-medium transition-colors" type="button">
+                    View artifact
+                  </button>
+<button class="p-1 rounded text-ink-subtle hover:text-ink hover:bg-paper-hover transition-colors" title="Rerun Workflow" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Running -->
+<tr class="hover:bg-paper-hover transition-colors cursor-pointer group" onclick="openDrawer('run-9023')">
+<td class="py-4 pl-space-lg pr-4 align-top">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-ink group-hover:text-accent-terracotta transition-colors">Research</span>
+<span class="font-code-sm text-[11px] text-ink-subtle">#RUN-9023</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 max-w-xs align-top">
+<p class="text-ink font-medium truncate">
+                  Compare state subsidy frameworks for offshore wind integration
+                </p>
+<p class="font-body-xs text-body-xs text-ink-subtle line-clamp-1 mt-0.5">
+                  Multi-agent retrieval across NEPOOL and NYISO docket filings.
+                </p>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-info-slate-subtle text-info-slate font-label-md text-label-md font-semibold">
+<svg class="animate-spin h-3 w-3 text-info-slate" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+                  Running
+                </span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm font-medium text-ink">3 / 5 steps</span>
+<div class="w-20 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-info-slate rounded-full w-3/5 animate-pulse"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-code-sm text-code-sm text-ink-muted">1m 12s</span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-body-xs text-body-xs text-ink-subtle">5m ago</span>
+</td>
+<td class="py-4 pr-space-lg pl-4 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-sm" onclick="event.stopPropagation()">
+<button class="text-ink-muted hover:text-ink font-label-md text-label-md font-medium transition-colors" type="button">
+                    View progress
+                  </button>
+<button class="p-1 rounded text-ink-subtle hover:text-error-crimson hover:bg-paper-hover transition-colors" title="Cancel run" type="button">
+<span class="material-symbols-outlined text-[18px]">stop_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Failed -->
+<tr class="hover:bg-paper-hover transition-colors cursor-pointer group" onclick="openDrawer('run-9022')">
+<td class="py-4 pl-space-lg pr-4 align-top">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-error-crimson"></span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-ink group-hover:text-accent-terracotta transition-colors">Literature Review</span>
+<span class="font-code-sm text-[11px] text-ink-subtle">#RUN-9022</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 max-w-xs align-top">
+<p class="text-ink font-medium truncate">
+                  Methodology review of grid modernization resilience metrics
+                </p>
+<p class="font-body-xs text-body-xs text-ink-subtle line-clamp-1 mt-0.5">
+                  Failed during citation verification: PDF parsed zero readable text layers.
+                </p>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-crimson-subtle text-error-crimson font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                  Failed
+                </span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm font-medium text-ink">2 / 5 steps</span>
+<div class="w-20 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error-crimson rounded-full w-2/5"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-code-sm text-code-sm text-ink-muted">45s</span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-body-xs text-body-xs text-ink-subtle">1d ago</span>
+</td>
+<td class="py-4 pr-space-lg pl-4 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-sm" onclick="event.stopPropagation()">
+<button class="text-error-crimson hover:text-error-crimson font-label-md text-label-md font-medium transition-colors" type="button">
+                    View error
+                  </button>
+<button class="p-1 rounded text-ink-subtle hover:text-ink hover:bg-paper-hover transition-colors" title="Retry Run" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Completed -->
+<tr class="hover:bg-paper-hover transition-colors cursor-pointer group" onclick="openDrawer('run-9021')">
+<td class="py-4 pl-space-lg pr-4 align-top">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-success-teal"></span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-ink group-hover:text-accent-terracotta transition-colors">Study Guide</span>
+<span class="font-code-sm text-[11px] text-ink-subtle">#RUN-9021</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 max-w-xs align-top">
+<p class="text-ink font-medium truncate">
+                  Literature synthesis on energy storage storage parity
+                </p>
+<p class="font-body-xs text-body-xs text-ink-subtle line-clamp-1 mt-0.5">
+                  Cross-referencing LCOS formulas with NREL 2024 annual standard scenarios.
+                </p>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-success-teal-subtle text-success-teal font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Completed
+                </span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm font-medium text-ink">5 / 5 steps</span>
+<div class="w-20 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-success-teal rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-code-sm text-code-sm text-ink-muted">4m 10s</span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-body-xs text-body-xs text-ink-subtle">3d ago</span>
+</td>
+<td class="py-4 pr-space-lg pl-4 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-sm" onclick="event.stopPropagation()">
+<button class="text-accent-terracotta hover:text-accent-terracotta-hover font-label-md text-label-md font-medium transition-colors" type="button">
+                    View artifact
+                  </button>
+<button class="p-1 rounded text-ink-subtle hover:text-ink hover:bg-paper-hover transition-colors" title="Rerun" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Cancelled -->
+<tr class="hover:bg-paper-hover transition-colors cursor-pointer group" onclick="openDrawer('run-9020')">
+<td class="py-4 pl-space-lg pr-4 align-top">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-ink group-hover:text-accent-terracotta transition-colors">Quick Synthesis</span>
+<span class="font-code-sm text-[11px] text-ink-subtle">#RUN-9020</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 max-w-xs align-top">
+<p class="text-ink font-medium truncate">
+                  Test question on solar tariffs
+                </p>
+<p class="font-body-xs text-body-xs text-ink-subtle line-clamp-1 mt-0.5">
+                  Manually stopped after step 1 clarification parameters.
+                </p>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-ink-muted font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                  Cancelled
+                </span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm font-medium text-ink">1 / 5 steps</span>
+<div class="w-20 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-1/5"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-code-sm text-code-sm text-ink-muted">12s</span>
+</td>
+<td class="py-4 px-4 align-top whitespace-nowrap">
+<span class="font-body-xs text-body-xs text-ink-subtle">1w ago</span>
+</td>
+<td class="py-4 pr-space-lg pl-4 align-top text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-sm" onclick="event.stopPropagation()">
+<button class="text-ink-muted hover:text-ink font-label-md text-label-md font-medium transition-colors" type="button">
+                    Resume
+                  </button>
+<button class="p-1 rounded text-ink-subtle hover:text-error-crimson hover:bg-paper-hover transition-colors" title="Delete run" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination / Audit Info -->
+<div class="px-space-lg py-3 bg-surface-container-low flex items-center justify-between font-label-xs text-label-xs text-ink-subtle">
+<div class="flex items-center gap-2">
+<span>Showing 1 to 5 of 29 historical runs</span>
+<span class="text-ink-subtle">•</span>
+<span class="font-code-sm text-code-sm text-ink-muted">Page 1 of 6</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-paper-elevated text-ink-subtle opacity-50 cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="px-2.5 py-1 rounded bg-paper-elevated text-ink hover:bg-paper-hover shadow-sm transition-colors" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- Timeline Detail Drawer (400px wide, docked right panel) -->
+<aside class="w-full lg:w-[400px] shrink-0 bg-paper-elevated rounded-lg shadow-md flex flex-col p-space-lg transition-all duration-300" id="timeline-drawer">
+<!-- Drawer Header -->
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-ink">Run #RUN-9024</h3>
+<span class="px-2 py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-label-xs text-label-xs font-semibold uppercase tracking-wider">Completed</span>
+</div>
+<span class="font-code-sm text-code-sm text-ink-subtle">Engine: GPT-4o + Claude 3.5 Sonnet Ensemble</span>
+</div>
+<button aria-label="Close drawer" class="p-1 rounded text-ink-subtle hover:text-ink hover:bg-paper-hover transition-colors" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Question Excerpt Box -->
+<div class="my-space-md p-3.5 rounded-md bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Research Prompt</span>
+<span class="material-symbols-outlined text-[14px] text-ink-subtle">format_quote</span>
+</div>
+<p class="font-body-sm text-body-sm text-ink font-medium leading-relaxed">
+          “Economic impacts of renewable portfolio standards on regional wholesale electricity markets”
+        </p>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-3 gap-2 py-space-sm px-1 mb-space-md bg-paper rounded-md">
+<div class="flex flex-col items-center justify-center p-2 text-center">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Duration</span>
+<span class="font-code-md text-code-md font-semibold text-ink mt-0.5">3m 42s</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 text-center">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Tokens</span>
+<span class="font-code-md text-code-md font-semibold text-ink mt-0.5">3,745</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 text-center">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Output</span>
+<span class="font-code-md text-code-md font-semibold text-accent-terracotta mt-0.5 truncate max-w-full" title="Policy Brief v1">Brief v1</span>
+</div>
+</div>
+<!-- Timeline Label -->
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-xs text-label-xs text-ink uppercase tracking-wider font-semibold">Execution Timeline</span>
+<span class="font-code-sm text-code-sm text-success-teal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> 100% Passed
+        </span>
+</div>
+<!-- Vertical Step Timeline -->
+<div class="relative flex flex-col gap-6 pl-2 pr-1 mb-space-lg">
+<!-- Connected vertical trace line -->
+<div class="absolute left-[19px] top-3 bottom-3 w-0.5 bg-border-emphasis"></div>
+<!-- Step 1 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-success-teal flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-sm font-semibold text-ink">1. Question refinement</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">12s</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container text-ink-muted">45 tokens</span>
+<span class="font-body-xs text-body-xs text-ink-subtle">Decomposed into 4 sub-hypotheses</span>
+</div>
+<!-- Expanded preview snippet -->
+<div class="mt-2 p-2.5 rounded bg-surface-container-low text-ink-muted font-body-xs text-body-xs leading-relaxed">
+              Mapped target dockets: CAISO MRTU, PJM capacity clearing rates, ERCOT scarcity pricing.
+            </div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-success-teal flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-sm font-semibold text-ink">2. Evidence gathering</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">1m 20s</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container text-ink-muted">1,200 tokens</span>
+<span class="font-body-xs text-body-xs text-success-teal font-medium">12 passages retrieved</span>
+</div>
+<div class="mt-1 flex items-center gap-1.5 flex-wrap">
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-full bg-paper text-ink border border-border-subtle">FERC Order 888</span>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-full bg-paper text-ink border border-border-subtle">NREL ATB 2023</span>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-full bg-paper text-ink border border-border-subtle">+10 sources</span>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-success-teal flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-sm font-semibold text-ink">3. Synthesis</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">1m 05s</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container text-ink-muted">2,100 tokens</span>
+<span class="font-body-xs text-body-xs text-ink-muted">Claude 3.5 Sonnet</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-subtle mt-1">
+              Multi-perspective reconciliation: negative pricing events vs long-run transmission CAPEX.
+            </p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-success-teal flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-sm font-semibold text-ink">4. Citation check</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">30s</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-success-teal-subtle text-success-teal font-medium">8 citations verified</span>
+<span class="font-body-xs text-body-xs text-ink-subtle">(100% grounded)</span>
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="relative flex items-start gap-space-md">
+<div class="relative z-10 w-6 h-6 rounded-full bg-success-teal flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-sm font-semibold text-ink">5. Deliverable generation</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">25s</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-accent-terracotta-subtle text-accent-terracotta font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>Policy_Brief_v1.md</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="mt-auto pt-space-md flex flex-col gap-2">
+<button class="w-full h-10 rounded-md bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary transition-all duration-150 font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Open deliverable artifact</span>
+</button>
+<button class="w-full h-9 rounded-md bg-paper hover:bg-paper-hover text-ink font-label-md text-label-md transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px] text-ink-muted">restart_alt</span>
+<span>Rerun workflow</span>
+</button>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  function openDrawer(runId) {
+    const drawer = document.getElementById('timeline-drawer');
+    if (drawer) {
+      drawer.classList.remove('hidden');
+      drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('timeline-drawer');
+    if (drawer) {
+      drawer.classList.add('hidden');
+    }
+  }
+</script></main></div></body></html>

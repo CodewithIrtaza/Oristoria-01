@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-container":"#63627a","success-teal":"#0d9488","paper":"#fafafa","on-tertiary-container":"#ffffff","surface-container":"#eeeeee","on-background":"#1a1c1c","secondary":"#5d5c74","on-primary-fixed":"#390b00","primary":"#994427","accent-terracotta-hover":"#9d4d33","ink-inverse":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#c6c4df","on-tertiary-fixed":"#00201d","on-tertiary":"#ffffff","accent-terracotta":"#b85c3d","surface-container-low":"#f3f3f3","error-crimson":"#b91c1c","info-slate-subtle":"#f1f5f9","tertiary":"#006a61","primary-container":"#b85c3d","tertiary-container":"#00857a","surface-container-highest":"#e2e2e2","secondary-container":"#e2e0fc","on-secondary":"#ffffff","surface-container-high":"#e8e8e8","background":"#f9f9f9","on-secondary-fixed-variant":"#45455b","error-container":"#ffdad6","on-error":"#ffffff","border-focus":"#b85c3d","on-tertiary-fixed-variant":"#005049","border-subtle":"#e5e5e5","border-error":"#b91c1c","outline":"#88726c","surface-variant":"#e2e2e2","warning-amber":"#c4963a","accent-terracotta-pressed":"#85402b","on-primary-fixed-variant":"#7b2e13","error-crimson-subtle":"#fef2f2","on-primary-container":"#ffffff","error":"#ba1a1a","inverse-primary":"#ffb59d","primary-fixed-dim":"#ffb59d","ink-subtle":"#8a8a9a","on-secondary-fixed":"#1a1a2e","primary-fixed":"#ffdbd0","tertiary-fixed-dim":"#6bd8cb","surface-dim":"#dadada","paper-pressed":"#eeeeee","surface-container-lowest":"#ffffff","warning-amber-subtle":"#fffbeb","paper-hover":"#f5f5f5","inverse-surface":"#2f3131","ink":"#1a1a2e","accent-terracotta-subtle":"#fdf2ef","on-surface":"#1a1c1c","ink-muted":"#4a4a6a","surface-tint":"#9a4528","success-teal-subtle":"#e6fffb","tertiary-fixed":"#89f5e7","on-surface-variant":"#55433d","info-slate":"#475569","inverse-on-surface":"#f0f1f1","on-error-container":"#93000a","border-emphasis":"#d0d0d0","surface":"#f9f9f9","surface-bright":"#f9f9f9","outline-variant":"#dbc1b9","secondary-fixed":"#e2e0fc","paper-elevated":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","space-lg":"1.5rem","margin":"1.5rem","margin-desktop":"2rem","gutter-lg":"2rem","space-md":"1rem","gutter":"1.5rem","gutter-sm":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem"},"fontFamily":{"display-sm":["Space Grotesk"],"label-lg":["Inter"],"headline-lg-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-lg":["Space Grotesk"],"body-md":["Inter"],"title-md":["Space Grotesk"],"code-md":["JetBrains Mono"],"body-xs":["Inter"],"body-lg":["Inter"],"label-xs":["Inter"],"headline-sm":["Space Grotesk"],"label-md":["Inter"],"code-sm":["JetBrains Mono"],"display-md":["Space Grotesk"],"headline-md":["Space Grotesk"],"display-xl":["Space Grotesk"],"body-sm":["Inter"]},"fontSize":{"display-sm":["24px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"21px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"39px","letterSpacing":"-0.005em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"46px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"25px","letterSpacing":"0","fontWeight":"600"}],"code-md":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"body-xs":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"29px","letterSpacing":"0","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"27px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"code-sm":["12px",{"lineHeight":"18px","letterSpacing":"0","fontWeight":"400"}],"display-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"31px","letterSpacing":"0","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"62px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}]}}}}</script></head><body class="bg-paper font-body-md text-body-md text-ink min-h-screen"><header class="fixed top-0 left-0 right-0 h-16 bg-paper-elevated/90 backdrop-blur-xl border-b border-border-subtle z-50 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-accent-terracotta-subtle flex items-center justify-center text-accent-terracotta"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-title-md text-title-md text-ink tracking-tight">Oristoria</span></div><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ink-subtle text-[18px]">search</span><input class="w-full h-10 pl-9 pr-12 rounded bg-paper border border-border-subtle font-body-sm text-body-sm text-ink placeholder:text-ink-subtle focus:border-border-focus focus:ring-2 focus:ring-accent-terracotta/20 focus:outline-none transition-all" placeholder="Search references, synthesis, notes..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high border border-border-subtle font-code-sm text-code-sm text-ink-muted"><span>⌘</span><span>K</span></div></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-sm px-space-sm py-1 rounded bg-paper border border-border-subtle"><div class="flex flex-col text-right"><span class="font-label-xs text-label-xs text-ink-subtle uppercase">LLM Compute</span><span class="font-code-sm text-code-sm text-ink font-medium">84.2k / 100k</span></div><div class="w-12 h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full bg-accent-terracotta rounded-full" style="width: 84%"></div></div></div><button aria-label="Toggle theme" class="w-9 h-9 rounded flex items-center justify-center text-ink-muted hover:text-ink hover:bg-paper-hover transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="h-6 w-px bg-border-subtle"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-paper-elevated border-r border-border-subtle z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-xs px-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Workspace</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta"><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="workspace-home" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Workspace Home</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="sources-list" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">library_books</span><span>Sources</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">148</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded transition-colors bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta" data-path="source-detail" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">description</span><span>Source Detail</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="chat-conversation" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">chat_bubble</span><span>Chat</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle text-accent-terracotta">Live</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="research-workflow" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_tree</span><span>Workflow Run</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-success-teal-subtle text-success-teal">Active</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="run-history" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">history</span><span>Run History</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">29</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="artifacts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Artifacts</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div><div class="px-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low border border-border-subtle flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-ink font-semibold">Academic Tier</span><span class="font-code-sm text-code-sm text-accent-terracotta bg-accent-terracotta-subtle px-1 rounded">PRO</span></div><p class="font-body-xs text-body-xs text-ink-subtle">Unlimited context windows, multi-agent runs &amp; persistent exports.</p><button class="mt-1 w-full h-8 rounded bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button"><span>Upgrade Seat</span><span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-paper px-margin-desktop"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Navigation & Breadcrumbs -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-ink-muted">
+<a class="inline-flex items-center gap-1 hover:text-accent-terracotta transition-colors px-2 py-1 rounded-md hover:bg-paper-hover" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Back to Sources</span>
+</a>
+<span class="text-ink-subtle">/</span>
+<span class="font-code-sm text-code-sm text-ink px-2 py-0.5 rounded bg-surface-container-high">renewable-energy-policy.pdf</span>
+</div>
+<!-- Quick action links -->
+<div class="flex items-center gap-space-xs text-body-xs font-body-xs text-ink-subtle">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-low font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">fingerprint</span>
+        doc_id: 09ae-883a
+      </span>
+<span class="px-2 py-1 rounded bg-surface-container-low font-code-sm text-code-sm">v1.2</span>
+</div>
+</div>
+<!-- Header Card (Elevation via subtle border & tone) -->
+<div class="bg-paper-elevated rounded-lg shadow-sm p-space-lg mb-space-lg relative overflow-hidden">
+<!-- Subtle architectural background wash accent -->
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-accent-terracotta/5 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-lg bg-accent-terracotta-subtle flex-shrink-0 flex items-center justify-center text-accent-terracotta">
+<span class="material-symbols-outlined text-[28px]">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-ink tracking-tight truncate">
+              renewable-energy-policy.pdf
+            </h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-success-teal"></span>
+              Ready
+            </span>
+<span class="font-code-sm text-code-sm text-ink-subtle bg-surface-container-high px-2 py-0.5 rounded" title="SHA-256 fingerprint">
+              SHA: 4f9e2b18
+            </span>
+</div>
+<!-- Metadata Pill Sequence -->
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 font-body-sm text-body-sm text-ink-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-ink-subtle">menu_book</span>
+              12 pages
+            </span>
+<span class="text-ink-subtle">•</span>
+<span>2.3 MB</span>
+<span class="text-ink-subtle">•</span>
+<span class="font-code-sm text-code-sm uppercase">Format: PDF</span>
+<span class="text-ink-subtle">•</span>
+<span class="text-ink-subtle">Uploaded 2 hours ago</span>
+<span class="text-ink-subtle">•</span>
+<span class="text-accent-terracotta font-medium">47 chunks embedded</span>
+</div>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2 lg:pt-0">
+<button class="h-10 px-4 rounded-md bg-accent-terracotta hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-lg text-label-lg transition-all flex items-center gap-2 shadow-sm" type="button">
+<span>Open in viewer</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+<button class="h-10 px-3.5 rounded-md bg-accent-terracotta-subtle hover:bg-accent-terracotta/20 text-accent-terracotta font-label-lg text-label-lg transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Rename</span>
+</button>
+<button class="h-10 px-3.5 rounded-md text-error-crimson hover:bg-error-crimson-subtle font-label-lg text-label-lg transition-colors flex items-center gap-1.5 ml-auto lg:ml-0" onclick="document.getElementById('danger-modal-preview').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="flex items-center gap-space-md mb-space-lg overflow-x-auto scrollbar-none bg-paper-elevated px-space-md rounded-lg shadow-sm">
+<button class="py-3 px-2 font-label-lg text-label-lg text-ink font-semibold relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent-terracotta whitespace-nowrap" type="button">
+      Overview
+    </button>
+<button class="py-3 px-2 font-label-lg text-label-lg text-ink-muted hover:text-ink transition-colors flex items-center gap-1.5 whitespace-nowrap" type="button">
+<span>Chunks &amp; Embeddings</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-surface-container-high text-ink-muted">47</span>
+</button>
+<button class="py-3 px-2 font-label-lg text-label-lg text-ink-muted hover:text-ink transition-colors flex items-center gap-1.5 whitespace-nowrap" type="button">
+<span>Citations</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-surface-container-high text-ink-muted">8</span>
+</button>
+<button class="py-3 px-2 font-label-lg text-label-lg text-ink-muted hover:text-ink transition-colors flex items-center gap-1.5 whitespace-nowrap" type="button">
+<span>Activity &amp; Runs</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-surface-container-high text-ink-muted">3</span>
+</button>
+</div>
+<!-- Overview Main Content: Asymmetric Architectural Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left Column: Source Text Preview & Semantic Extraction (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-paper-elevated rounded-lg shadow-sm p-space-lg flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[20px]">subject</span>
+<h2 class="font-title-md text-title-md text-ink">Extracted Text Preview</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-ink-subtle">Page 3 of 12</span>
+<div class="flex items-center bg-surface-container-low rounded p-0.5">
+<button class="p-1 rounded text-ink-muted hover:text-ink hover:bg-paper-hover" title="Previous page" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="p-1 rounded text-ink-muted hover:text-ink hover:bg-paper-hover" title="Next page" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Archival Paper Text Window -->
+<div class="bg-paper rounded-md p-space-md overflow-y-auto max-h-[380px] shadow-inner font-code-md text-code-md text-ink leading-relaxed space-y-3">
+<div class="flex items-center justify-between pb-2 text-ink-subtle font-code-sm text-code-sm">
+<span>[PARSED LAYER: NATIVE OCR-V2]</span>
+<span>CONFIDENCE: 99.4%</span>
+</div>
+<p class="font-semibold text-accent-terracotta">Section 2.1: Policy Framework and Decarbonization Mandates</p>
+<p>
+            The national policy framework establishes three statutory pillars to guide commercial deployment through fiscal year 2035:
+          </p>
+<p class="pl-4 bg-accent-terracotta-subtle/50 py-1.5 rounded text-ink">
+<span class="font-semibold text-accent-terracotta font-code-sm">¶ 2.1.1</span> Renewable Portfolio Standards (RPS) requiring an audited minimum of <span class="bg-surface-container-high px-1 rounded font-medium">40% clean energy</span> integration across all regional transmission entities by December 31, 2030.
+          </p>
+<p class="pl-4 bg-accent-terracotta-subtle/50 py-1.5 rounded text-ink">
+<span class="font-semibold text-accent-terracotta font-code-sm">¶ 2.1.2</span> Targeted Federal Grid Modernization Grants totaling <span class="bg-surface-container-high px-1 rounded font-medium">$12,000,000,000 USD</span> disbursed over a rolling sixty-month execution schedule directly to inter-state high-voltage direct current (HVDC) corridors.
+          </p>
+<p class="pl-4 bg-accent-terracotta-subtle/50 py-1.5 rounded text-ink">
+<span class="font-semibold text-accent-terracotta font-code-sm">¶ 2.1.3</span> Longitudinal workforce transition programs designed to absorb and retrain displaced hydrocarbon extraction personnel within regional microgrid manufacturing hubs.
+          </p>
+<p class="text-ink-muted">
+            The regulatory structure further enforces quarterly reporting metrics under Title IV, establishing statutory penalties of up to $25,000 per megawatt-hour shortfall against mandated baseline emissions...
+          </p>
+</div>
+<!-- Text Card Footer Meta -->
+<div class="flex items-center justify-between pt-space-md text-body-xs font-body-xs text-ink-subtle">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success-teal"></span>
+<span>Full vector context preserved</span>
+</div>
+<button class="text-accent-terracotta hover:underline font-label-md text-label-md flex items-center gap-1" type="button">
+<span>Copy full text excerpt</span>
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Synthesis Insights & Visual Context Banner -->
+<div class="bg-surface-container-low rounded-lg p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1 min-w-0">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-ink-subtle">Synthesis Insight</span>
+<h3 class="font-title-md text-title-md text-ink">Primary Regulatory Pivot Point</h3>
+<p class="font-body-sm text-body-sm text-ink-muted">Referenced 8 times across current active queries regarding 2030 renewable milestones.</p>
+</div>
+<div class="flex-shrink-0 w-32 h-16 relative">
+<!-- Inline Minimal Sparkline SVG showing token density per page -->
+<svg class="w-full h-full text-accent-terracotta overflow-visible" fill="none" viewbox="0 0 120 40">
+<path d="M0 32 L10 28 L20 30 L30 18 L40 12 L50 14 L60 8 L70 22 L80 16 L90 26 L100 24 L110 34" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle class="fill-accent-terracotta" cx="60" cy="8" r="3.5"></circle>
+</svg>
+<span class="font-code-sm text-code-sm text-ink-subtle block text-right">Page Density Peak</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Vector Chunks & Pipeline Diagnostics (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Chunks Sample Block -->
+<div class="bg-paper-elevated rounded-lg shadow-sm p-space-lg flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[20px]">dataset</span>
+<h2 class="font-title-md text-title-md text-ink">Sample Embedded Chunks</h2>
+</div>
+<span class="font-code-sm text-code-sm text-accent-terracotta bg-accent-terracotta-subtle px-2 py-0.5 rounded">
+            2 of 47 shown
+          </span>
+</div>
+<div class="space-y-space-sm">
+<!-- Chunk #12 -->
+<div class="p-space-sm rounded-md bg-paper hover:bg-paper-hover transition-colors flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-code-sm text-code-sm">
+<span class="font-semibold text-ink">Chunk #12</span>
+<span class="text-tertiary bg-success-teal-subtle px-1.5 py-0.2 rounded font-medium">#vec-8841</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted line-clamp-2">
+              "The national policy framework establishes three statutory pillars to guide commercial deployment through fiscal year 2035..."
+            </p>
+<div class="flex items-center justify-between text-body-xs font-body-xs text-ink-subtle pt-1">
+<span>Pages 3–4</span>
+<span class="font-code-sm text-code-sm">384 tokens</span>
+</div>
+</div>
+<!-- Chunk #13 -->
+<div class="p-space-sm rounded-md bg-paper hover:bg-paper-hover transition-colors flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-code-sm text-code-sm">
+<span class="font-semibold text-ink">Chunk #13</span>
+<span class="text-tertiary bg-success-teal-subtle px-1.5 py-0.2 rounded font-medium">#vec-8842</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted line-clamp-2">
+              "Section 2.1.2 Targeted Federal Grid Modernization Grants totaling $12B disbursed over a rolling sixty-month schedule..."
+            </p>
+<div class="flex items-center justify-between text-body-xs font-body-xs text-ink-subtle pt-1">
+<span>Page 4</span>
+<span class="font-code-sm text-code-sm">410 tokens</span>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-2 rounded bg-surface-container-low hover:bg-surface-container text-ink font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button">
+<span>View all 47 vector embeddings</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Processing Pipeline Log / Audit Trail -->
+<div class="bg-paper-elevated rounded-lg shadow-sm p-space-lg flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[20px]">account_tree</span>
+<h2 class="font-title-md text-title-md text-ink">Ingestion Pipeline Log</h2>
+</div>
+<span class="font-label-xs text-label-xs text-success-teal bg-success-teal-subtle px-2 py-0.5 rounded font-semibold uppercase">
+            Completed
+          </span>
+</div>
+<div class="relative pl-6 space-y-space-md before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Step 1 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[19px] top-1 w-4 h-4 rounded-full bg-success-teal text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] font-bold">check</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-ink font-semibold">Uploaded</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">14:02 UTC</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted">Direct binary payload uploaded via Web Client (2.3 MB).</p>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[19px] top-1 w-4 h-4 rounded-full bg-success-teal text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] font-bold">check</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-ink font-semibold">Parsed &amp; OCR Applied</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">14:03 UTC</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted">12 pages extracted. Table headers normalized to markdown.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[19px] top-1 w-4 h-4 rounded-full bg-success-teal text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] font-bold">check</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-ink font-semibold">Vectorized</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">14:04 UTC</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted">47 segments processed through text-embedding-3-large.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative flex flex-col">
+<div class="absolute -left-[19px] top-1 w-4 h-4 rounded-full bg-success-teal text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] font-bold">check</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-ink font-semibold">Ready for Queries</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">14:04 UTC</span>
+</div>
+<p class="font-body-xs text-body-xs text-ink-muted">Index committed to persistent cluster memory.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Delete Confirmation Preview / Danger Zone Card -->
+<div class="bg-paper-elevated rounded-lg shadow-sm p-space-lg relative overflow-hidden" id="danger-modal-preview">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-error-crimson-subtle flex-shrink-0 flex items-center justify-center text-error-crimson">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-ink tracking-tight">
+            Delete "renewable-energy-policy.pdf"?
+          </h3>
+<p class="font-body-sm text-body-sm text-ink-muted mt-1 max-w-2xl">
+            This permanently removes the source document, <span class="font-code-sm text-code-sm font-semibold text-ink">47 chunk partitions</span>, <span class="font-code-sm text-code-sm font-semibold text-ink">1,480 vector coordinates</span>, and unties <span class="font-code-sm text-code-sm font-semibold text-ink">8 citation links</span> across active research threads. This action cannot be reversed.
+          </p>
+</div>
+</div>
+<!-- Action Confirmation Buttons -->
+<div class="flex items-center gap-space-sm flex-shrink-0 w-full md:w-auto justify-end pt-2 md:pt-0">
+<button class="h-10 px-4 rounded-md bg-paper hover:bg-paper-hover text-ink font-label-md text-label-md transition-colors" type="button">
+          Cancel
+        </button>
+<button class="h-10 px-5 rounded-md bg-error-crimson hover:bg-error active:bg-error-container text-on-error font-label-md text-label-md transition-all shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">delete_forever</span>
+<span>Confirm Deletion</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

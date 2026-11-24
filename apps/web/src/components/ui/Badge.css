@@ -1,0 +1,100 @@
+/* ============================================================================
+   BADGE COMPONENT
+   Status badges per DESIGN.md §6
+   ============================================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--badge-gap);
+  height: var(--badge-height);
+  padding: var(--badge-padding);
+  font-family: var(--font-body);
+  font-size: var(--badge-font-size);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Sizes */
+.badge--sm {
+  height: calc(var(--badge-height) * 0.8);
+  padding: 0 calc(var(--badge-padding) * 0.8);
+  font-size: calc(var(--badge-font-size) * 0.85);
+}
+
+/* =============================================================================
+   VARIANTS
+   ============================================================================= */
+
+/* Processing / Queued — info-slate */
+.badge--processing,
+.badge--queued {
+  background-color: var(--color-status-processing-bg);
+  color: var(--color-status-processing);
+}
+
+.badge--queued {
+  background-color: var(--color-status-queued-bg);
+  color: var(--color-status-queued);
+}
+
+/* Ready / Complete — success-teal */
+.badge--ready,
+.badge--success {
+  background-color: var(--color-status-ready-bg);
+  color: var(--color-status-ready);
+}
+
+/* Failed / Error — error-crimson */
+.badge--failed,
+.badge--error {
+  background-color: var(--color-status-failed-bg);
+  color: var(--color-status-failed);
+}
+
+/* Warning — warning-amber */
+.badge--warning {
+  background-color: var(--color-warning-amber-subtle);
+  color: var(--color-warning-amber);
+}
+
+/* Info — info-slate */
+.badge--info {
+  background-color: var(--color-info-slate-subtle);
+  color: var(--color-info-slate);
+}
+
+/* Default — border-subtle background, ink-muted text */
+.badge--default {
+  background-color: var(--color-border-subtle);
+  color: var(--color-ink-muted);
+}
+
+[data-theme="dark"] .badge--default {
+  background-color: var(--color-border-subtle);
+  color: var(--color-ink-muted);
+}
+
+/* =============================================================================
+   ICON
+   ============================================================================= */
+
+.badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+  font-size: 0.75em;
+}
+
+/* =============================================================================
+   DARK THEME ADJUSTMENTS (handled by CSS variable overrides in tokens.css)
+   ============================================================================= */
+
+/* All badge colors use CSS variables that are overridden in [data-theme="dark"] */

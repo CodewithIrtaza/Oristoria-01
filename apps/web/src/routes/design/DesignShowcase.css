@@ -1,0 +1,269 @@
+/* ============================================================================
+   DESIGN SHOWCASE PAGE STYLES
+   ============================================================================ */
+
+.design-showcase {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  transition: background-color var(--duration-normal) var(--easing-ease-out),
+              color var(--duration-normal) var(--easing-ease-out);
+}
+
+/* =============================================================================
+   TOP BAR
+   ============================================================================= */
+
+.design-showcase__topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--layout-topbar-height);
+  padding: 0 var(--layout-container-padding);
+  background-color: var(--color-paper-elevated);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+  box-shadow: var(--shadow-xs);
+}
+
+.design-showcase__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.design-showcase__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.design-showcase__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.design-showcase__theme-indicator {
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink-muted);
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-paper-hover);
+  border-radius: var(--radius-full);
+}
+
+/* =============================================================================
+   MAIN CONTENT
+   ============================================================================= */
+
+.design-showcase__main {
+  flex: 1;
+  padding: var(--space-8) var(--layout-container-padding);
+  max-width: var(--layout-container-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.design-showcase__section {
+  margin-bottom: var(--space-16);
+}
+
+.design-showcase__section-header {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+}
+
+.design-showcase__section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-2);
+}
+
+.design-showcase__section-desc {
+  font-size: var(--text-body);
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+/* =============================================================================
+   DEMO GRID
+   ============================================================================= */
+
+.design-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.design-showcase__demo {
+  background-color: var(--color-paper-elevated);
+  border: var(--border-width-normal) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.design-showcase__demo-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-width-normal) solid var(--color-border-subtle);
+}
+
+/* =============================================================================
+   BUTTON GROUPS
+   ============================================================================= */
+
+.design-showcase__button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* =============================================================================
+   CARD GROUPS
+   ============================================================================= */
+
+.design-showcase__card-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* =============================================================================
+   BADGE GROUPS
+   ============================================================================= */
+
+.design-showcase__badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* =============================================================================
+   FORM GROUPS
+   ============================================================================= */
+
+.design-showcase__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* =============================================================================
+   AVATAR GROUPS
+   ============================================================================= */
+
+.design-showcase__avatar-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* =============================================================================
+   ICON GROUPS
+   ============================================================================= */
+
+.design-showcase__icon-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* =============================================================================
+   THEME DEMO
+   ============================================================================= */
+
+.design-showcase__theme-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.design-showcase__theme-preview {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: var(--border-width-normal) solid var(--color-border-subtle);
+}
+
+.design-showcase__theme-card {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.design-showcase__theme-card h4 {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--text-label-lg);
+  color: var(--color-ink);
+}
+
+.design-showcase__theme-card p {
+  margin: 0;
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-muted);
+}
+
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
+
+.design-showcase__footer {
+  padding: var(--space-8) var(--layout-container-padding);
+  text-align: center;
+  border-top: var(--border-width-normal) solid var(--color-border-subtle);
+  background-color: var(--color-paper-elevated);
+  margin-top: var(--space-8);
+}
+
+.design-showcase__footer p {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-body-sm);
+  color: var(--color-ink-muted);
+}
+
+.design-showcase__footer-note {
+  font-size: var(--text-body-xs);
+  color: var(--color-ink-subtle) !important;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .design-showcase__topbar {
+    padding: 0 var(--space-4);
+  }
+
+  .design-showcase__main {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .design-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .design-showcase__theme-demo {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"paper-hover":"#f5f5f5","secondary-fixed":"#e2e0fc","info-slate":"#475569","primary-container":"#b85c3d","surface-dim":"#dadada","on-secondary":"#ffffff","error-container":"#ffdad6","inverse-on-surface":"#f0f1f1","primary-fixed-dim":"#ffb59d","surface-variant":"#e2e2e2","secondary":"#5d5c74","accent-terracotta":"#b85c3d","accent-terracotta-subtle":"#fdf2ef","ink-muted":"#4a4a6a","on-secondary-container":"#63627a","primary-fixed":"#ffdbd0","success-teal":"#0d9488","outline-variant":"#dbc1b9","on-error-container":"#93000a","border-subtle":"#e5e5e5","tertiary":"#006a61","error-crimson-subtle":"#fef2f2","on-tertiary-fixed-variant":"#005049","warning-amber":"#c4963a","border-emphasis":"#d0d0d0","success-teal-subtle":"#e6fffb","inverse-primary":"#ffb59d","secondary-container":"#e2e0fc","paper":"#fafafa","on-error":"#ffffff","tertiary-fixed-dim":"#6bd8cb","on-surface-variant":"#55433d","on-secondary-fixed":"#1a1a2e","surface-container":"#eeeeee","on-tertiary-fixed":"#00201d","on-surface":"#1a1c1c","paper-elevated":"#ffffff","primary":"#994427","on-background":"#1a1c1c","on-tertiary":"#ffffff","on-tertiary-container":"#ffffff","surface-container-high":"#e8e8e8","surface-container-highest":"#e2e2e2","on-primary":"#ffffff","tertiary-container":"#00857a","on-secondary-fixed-variant":"#45455b","paper-pressed":"#eeeeee","error-crimson":"#b91c1c","inverse-surface":"#2f3131","on-primary-fixed":"#390b00","ink":"#1a1a2e","surface":"#f9f9f9","tertiary-fixed":"#89f5e7","border-focus":"#b85c3d","accent-terracotta-pressed":"#85402b","outline":"#88726c","on-primary-fixed-variant":"#7b2e13","border-error":"#b91c1c","ink-inverse":"#ffffff","secondary-fixed-dim":"#c6c4df","ink-subtle":"#8a8a9a","on-primary-container":"#ffffff","error":"#ba1a1a","accent-terracotta-hover":"#9d4d33","surface-tint":"#9a4528","surface-bright":"#f9f9f9","surface-container-lowest":"#ffffff","background":"#f9f9f9","info-slate-subtle":"#f1f5f9","surface-container-low":"#f3f3f3","warning-amber-subtle":"#fffbeb"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","margin":"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem","gutter":"1.5rem","margin-desktop":"2rem","gutter-lg":"2rem","gutter-sm":"1rem","space-xl":"2rem"},"fontFamily":{"title-md":["Space Grotesk"],"body-md":["Inter"],"display-lg":["Space Grotesk"],"label-md":["Inter"],"headline-sm":["Space Grotesk"],"label-lg":["Inter"],"body-lg":["Inter"],"display-sm":["Space Grotesk"],"label-xs":["Inter"],"code-md":["JetBrains Mono"],"body-sm":["Inter"],"headline-lg":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"code-sm":["JetBrains Mono"],"display-md":["Space Grotesk"],"display-xl":["Space Grotesk"],"headline-md":["Space Grotesk"],"body-xs":["Inter"]},"fontSize":{"title-md":["18px",{"lineHeight":"25px","letterSpacing":"0","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"400"}],"display-lg":["40px",{"lineHeight":"46px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"27px","letterSpacing":"0","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"21px","letterSpacing":"0.01em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"29px","letterSpacing":"0","fontWeight":"400"}],"display-sm":["24px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-xs":["10px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"code-md":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"headline-lg":["30px",{"lineHeight":"39px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"600"}],"code-sm":["12px",{"lineHeight":"18px","letterSpacing":"0","fontWeight":"400"}],"display-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"62px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"31px","letterSpacing":"0","fontWeight":"600"}],"body-xs":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}]}}}}</script></head><body class="bg-paper font-body-md text-body-md text-ink min-h-screen"><header class="fixed top-0 left-0 right-0 h-16 bg-paper-elevated/90 backdrop-blur-xl border-b border-border-subtle z-50 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-accent-terracotta-subtle flex items-center justify-center text-accent-terracotta"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-title-md text-title-md text-ink tracking-tight">Oristoria</span></div><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ink-subtle text-[18px]">search</span><input class="w-full h-10 pl-9 pr-12 rounded bg-paper border border-border-subtle font-body-sm text-body-sm text-ink placeholder:text-ink-subtle focus:border-border-focus focus:ring-2 focus:ring-accent-terracotta/20 focus:outline-none transition-all" placeholder="Search references, synthesis, notes..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high border border-border-subtle font-code-sm text-code-sm text-ink-muted"><span>⌘</span><span>K</span></div></div></div><div class="flex items-center gap-space-md"><a class="hidden sm:flex items-center gap-space-sm px-space-sm py-1 rounded bg-paper border border-border-subtle hover:border-border-emphasis transition-colors" data-path="usage-limits-meter" href="#"><div class="flex flex-col text-right"><span class="font-label-xs text-label-xs text-ink-subtle uppercase">LLM Compute</span><span class="font-code-sm text-code-sm text-ink font-medium">84.2k / 100k</span></div><div class="w-12 h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full bg-accent-terracotta rounded-full" style="width: 84%"></div></div></a><button aria-label="Toggle theme" class="w-9 h-9 rounded flex items-center justify-center text-ink-muted hover:text-ink hover:bg-paper-hover transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="h-6 w-px bg-border-subtle"></div><a class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-accent-terracotta-hover transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">person</span></a></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-paper-elevated border-r border-border-subtle z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-xs px-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Workspace</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta"><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="workspace-home" href="#"><span>Workspace Home</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="sources-list" href="#"><span>Sources</span><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">148</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="source-detail" href="#"><span>Source Detail</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="chat-conversation" href="#"><span>Chat</span><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle text-accent-terracotta">Live</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="research-workflow" href="#"><span>Workflow Run</span><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-success-teal-subtle text-success-teal">Active</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="run-history-timeline-detail" href="#"><span>Run History</span><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">29</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded transition-colors bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta" data-path="artifacts-detail" href="#"><span>Artifacts</span><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">12</span></a><div class="my-space-xs border-t border-border-subtle"></div><div class="px-space-sm py-space-xs"><span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">System</span></div><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="usage-limits-meter" href="#"><span>Usage &amp; Limits</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><span>Settings</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="settings-privacy-export" href="#"><span>Privacy &amp; Export</span></a></nav></div><div class="px-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low border border-border-subtle flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-ink font-semibold">Academic Tier</span><span class="font-code-sm text-code-sm text-accent-terracotta bg-accent-terracotta-subtle px-1 rounded">PRO</span></div><p class="font-body-xs text-body-xs text-ink-subtle">Unlimited context windows, multi-agent runs &amp; persistent exports.</p><a class="mt-1 w-full h-8 rounded bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5 text-center" data-path="upgrade-payment" href="#"><span>Upgrade Seat</span></a></div></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-paper px-margin-desktop"><div class="flex flex-col w-full pb-16">
+<!-- Top Action & Navigation Context Bar -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-md mb-space-lg">
+<div class="flex items-center gap-space-md flex-wrap">
+<a class="flex items-center gap-1.5 px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-paper-hover text-ink-muted hover:text-ink transition-colors font-label-md text-label-md" data-path="artifacts-detail" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Artifacts</span>
+</a>
+<div class="h-5 w-px bg-surface-variant hidden sm:block"></div>
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-ink hover:bg-surface-container/60 focus:bg-paper-elevated px-2 py-0.5 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-terracotta/30 transition-all cursor-text truncate max-w-xl" contenteditable="true" id="editable-title" spellcheck="false" title="Click to edit document title">
+          Economic Impacts of Renewable Portfolio Standards
+        </h2>
+<span class="material-symbols-outlined text-ink-subtle text-[16px] select-none">edit</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-accent-terracotta-subtle text-accent-terracotta font-label-xs text-label-xs font-semibold tracking-wider uppercase select-none">
+        Research Brief
+      </span>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-paper-elevated shadow-sm hover:bg-paper-hover text-ink font-label-md text-label-md transition-colors" title="Export Deliverable" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-paper-elevated shadow-sm hover:bg-paper-hover text-ink font-label-md text-label-md transition-colors" title="Create Copy" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-crimson-subtle hover:bg-error-container text-error-crimson font-label-md text-label-md transition-colors" title="Remove Artifact" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="hidden sm:inline">Delete</span>
+</button>
+</div>
+</section>
+<!-- Workspace 2-Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Primary Artifact Deliverable -->
+<article class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="w-full bg-paper-elevated rounded-xl shadow-sm p-6 md:p-8 flex flex-col">
+<!-- Header Metadata Strip -->
+<header class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-lg mb-space-lg bg-surface-container-low/70 -mx-6 md:-mx-8 -mt-6 md:-mt-8 px-6 md:px-8 pt-6 md:pt-8 rounded-t-xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="flex items-center gap-1 font-body-sm text-body-sm text-ink-muted">
+<span class="material-symbols-outlined text-[16px] text-accent-terracotta">library_books</span>
+              Based on 3 sources
+            </span>
+<span class="text-ink-subtle">•</span>
+<span class="font-body-sm text-body-sm text-ink-muted font-medium">12 citations</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap">
+<a class="flex items-center gap-1.5 font-code-sm text-code-sm text-tertiary hover:text-tertiary-container transition-colors bg-paper-elevated px-2 py-0.5 rounded shadow-sm" data-path="run-history-timeline-detail" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-success-teal"></span>
+              Research workflow • 2h ago
+              <span class="font-semibold text-accent-terracotta">#RUN-9024</span>
+</a>
+<span class="font-code-sm text-code-sm text-ink-subtle">2,400 words • ~8 min</span>
+</div>
+</header>
+<!-- Document Rich Article Content -->
+<div class="flex flex-col gap-space-lg text-ink font-body-md text-body-md leading-relaxed">
+<div class="space-y-2">
+<h1 class="font-display-lg text-display-lg text-ink tracking-tight">
+              Economic Impacts of Renewable Portfolio Standards
+            </h1>
+<p class="font-body-sm text-body-sm text-ink-subtle">
+              Systematic synthesis across ISO-NE, PJM, and CAISO regulatory proceedings from 2018 to 2024.
+            </p>
+</div>
+<!-- Section: Executive Summary -->
+<section class="space-y-3 pt-2">
+<h2 class="font-headline-sm text-headline-sm text-ink tracking-tight flex items-center gap-2">
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container text-ink-muted">01</span>
+              Executive Summary
+            </h2>
+<p class="text-ink leading-relaxed">
+              Renewable Portfolio Standards (RPS) have measurable effects on regional electricity wholesale clearing prices and grid reliability capital allocation. By mandating predetermined non-fossil procurement quotas, regulatory authorities structurally alter dispatch order dynamics along the merit-order stack while redirecting secondary ancillary reserve investments.
+            </p>
+<p class="text-ink leading-relaxed">
+              This dossier analyzes aggregated operational datasets to isolate genuine fiscal burdens from nominal inflation shocks, reconciling long-standing discrepancies between public policy models and regional transmission operator (RTO) settlement realities.
+            </p>
+</section>
+<!-- Core Callout / Blockquote -->
+<aside class="relative p-space-lg my-space-sm rounded-lg bg-surface-container-low shadow-sm pl-6 overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-accent-terracotta"></div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent-terracotta text-[24px] mt-0.5">tips_and_updates</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-accent-terracotta font-semibold">Synthesis Finding</span>
+<blockquote class="font-body-lg text-body-lg text-ink italic leading-snug">
+                  "Non-energy market uplift charges neutralize localized wholesale spot price dips unless paired with battery storage (BESS)."
+                </blockquote>
+</div>
+</div>
+</aside>
+<!-- Section: Key Findings -->
+<section class="space-y-4 pt-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-ink tracking-tight flex items-center gap-2">
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container text-ink-muted">02</span>
+              Key Findings
+            </h2>
+<ol class="space-y-4 list-none pl-0">
+<li class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<span class="w-6 h-6 rounded-full bg-paper-elevated shadow-sm flex items-center justify-center font-code-sm text-code-sm text-accent-terracotta font-bold shrink-0 mt-0.5">
+                  1
+                </span>
+<div class="space-y-1">
+<p class="text-ink">
+<strong class="font-semibold text-ink">Price impacts are modest</strong> — Empirical studies show 0.5–2% retail rate increases across deregulated ISO territories
+                    <button class="inline-flex items-center justify-center ml-1 px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle hover:bg-accent-terracotta hover:text-ink-inverse text-accent-terracotta font-code-sm text-code-sm font-semibold transition-all" onclick="focusCitation('cite-1')" type="button">
+                      [1]
+                    </button>
+<button class="inline-flex items-center justify-center ml-0.5 px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle hover:bg-accent-terracotta hover:text-ink-inverse text-accent-terracotta font-code-sm text-code-sm font-semibold transition-all" onclick="focusCitation('cite-2')" type="button">
+                      [2]
+                    </button>. Subsidized wind and solar penetration depresses day-ahead marginal costs during peak generation hours, largely balancing out retail capital recovery line items.
+                  </p>
+</div>
+</li>
+<li class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<span class="w-6 h-6 rounded-full bg-paper-elevated shadow-sm flex items-center justify-center font-code-sm text-code-sm text-accent-terracotta font-bold shrink-0 mt-0.5">
+                  2
+                </span>
+<div class="space-y-1">
+<p class="text-ink">
+<strong class="font-semibold text-ink">Grid reliability maintained</strong> — No statistical correlation between aggressive RPS stringency and localized reserve margin outage frequencies
+                    <button class="inline-flex items-center justify-center ml-1 px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle hover:bg-accent-terracotta hover:text-ink-inverse text-accent-terracotta font-code-sm text-code-sm font-semibold transition-all" onclick="focusCitation('cite-3')" type="button">
+                      [3]
+                    </button>. Operational risk mitigation is predominantly mediated through quick-start gas peaking facilities and early synthetic inertia market programs.
+                  </p>
+</div>
+</li>
+<li class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<span class="w-6 h-6 rounded-full bg-paper-elevated shadow-sm flex items-center justify-center font-code-sm text-code-sm text-accent-terracotta font-bold shrink-0 mt-0.5">
+                  3
+                </span>
+<div class="space-y-1">
+<p class="text-ink">
+<strong class="font-semibold text-ink">Job transition critical</strong> — Targeted retraining and clean energy workforce parity programs substantially mitigate regional political resistance
+                    <button class="inline-flex items-center justify-center ml-1 px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle hover:bg-accent-terracotta hover:text-ink-inverse text-accent-terracotta font-code-sm text-code-sm font-semibold transition-all" onclick="focusCitation('cite-4')" type="button">
+                      [4]
+                    </button>. Direct capital re-allocation yields a net 1.4x employment multiplier relative to baseline thermal generation maintenance pipelines.
+                  </p>
+</div>
+</li>
+</ol>
+</section>
+<!-- Section: Policy Recommendations -->
+<section class="space-y-3 pt-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-ink tracking-tight flex items-center gap-2">
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container text-ink-muted">03</span>
+              Policy Recommendations
+            </h2>
+<div class="space-y-2.5">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-paper">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5 shrink-0">check_circle</span>
+<p class="text-ink font-body-sm text-body-sm leading-relaxed">
+<strong>Phase implementation thresholds dynamically</strong> to allow wholesale market capacity adjustment without abrupt peak capacity surcharge spikes.
+                </p>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-paper">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5 shrink-0">check_circle</span>
+<p class="text-ink font-body-sm text-body-sm leading-relaxed">
+<strong>Fund workforce transition funds proportionally</strong> to fossil-fuel impacted labor markets, emphasizing skill transferability to distributed storage operations.
+                </p>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-paper">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5 shrink-0">check_circle</span>
+<p class="text-ink font-body-sm text-body-sm leading-relaxed">
+<strong>Establish federal reliability backstop</strong> with cross-regional transmission capacity corridors to relieve inter-ISO congestion bottlenecks.
+                </p>
+</div>
+</div>
+</section>
+<!-- Section: Sources & Citations Ledger -->
+<section class="mt-space-md pt-space-md bg-surface-container-low rounded-lg p-space-md space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-ink font-semibold uppercase tracking-wider">
+                Sources &amp; Citations Index
+              </h2>
+<span class="font-code-sm text-code-sm text-ink-subtle">Audit Hash: e9a2c3</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-code-sm text-code-sm">
+<div class="flex items-center gap-2 p-2 rounded bg-paper-elevated text-ink-muted shadow-sm">
+<span class="text-accent-terracotta font-semibold">[1]</span>
+<span class="truncate">Renewable Energy Policy Review 2024, pp. 3–4</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-paper-elevated text-ink-muted shadow-sm">
+<span class="text-accent-terracotta font-semibold">[2]</span>
+<span class="truncate">Ibid., pp. 7–9</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-paper-elevated text-ink-muted shadow-sm">
+<span class="text-accent-terracotta font-semibold">[3]</span>
+<span class="truncate">Grid Modernization Assessment, pp. 12–15</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-paper-elevated text-ink-muted shadow-sm">
+<span class="text-accent-terracotta font-semibold">[4]</span>
+<span class="truncate">Workforce Transition Analysis, pp. 20–22</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Actions Bar -->
+<footer class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-low -mx-6 md:-mx-8 -mb-6 md:-mb-8 px-6 md:px-8 py-4 rounded-b-xl">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto px-4 py-2 rounded-lg bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export as PDF</span>
+</button>
+<button class="w-full sm:w-auto px-3.5 py-2 rounded-lg bg-accent-terracotta-subtle hover:bg-primary-fixed text-accent-terracotta font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">markdown</span>
+<span>Export as Markdown</span>
+</button>
+</div>
+<a class="w-full sm:w-auto px-3.5 py-2 rounded-lg bg-paper hover:bg-paper-hover text-ink-muted hover:text-ink font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" data-path="chat-conversation" href="#">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>Edit in new chat</span>
+</a>
+</footer>
+</div>
+</article>
+<!-- Right Column: Citation Audit Panel (Sticky) -->
+<aside class="lg:col-span-4 w-full sticky top-20 flex flex-col gap-space-md">
+<div class="bg-paper-elevated rounded-xl shadow-sm p-5 space-y-space-md">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[20px]">fact_check</span>
+<h3 class="font-title-md text-title-md text-ink">Citation Audit</h3>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container font-medium text-ink-muted">
+            12 Citations
+          </span>
+</div>
+<!-- Audit Summary Bar -->
+<div class="space-y-2">
+<div class="flex items-center justify-between font-label-xs text-label-xs text-ink-muted">
+<span>Synthesis Confidence</span>
+<span class="font-code-sm text-code-sm font-semibold text-ink">83% Verified</span>
+</div>
+<!-- Composite Progress Metric -->
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden flex">
+<div class="h-full bg-success-teal" style="width: 66.6%" title="8 Verified"></div>
+<div class="h-full bg-warning-amber" style="width: 16.7%" title="2 Needs Review"></div>
+<div class="h-full bg-error-crimson" style="width: 16.7%" title="2 Unsupported"></div>
+</div>
+<!-- Color-Coded Tally Badges -->
+<div class="flex items-center justify-between pt-1 gap-1 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-success-teal-subtle text-success-teal font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-success-teal"></span>
+              8 verified
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-warning-amber-subtle text-warning-amber font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-warning-amber"></span>
+              2 needs review
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-crimson-subtle text-error-crimson font-label-xs text-label-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error-crimson"></span>
+              2 unsupported
+            </span>
+</div>
+</div>
+<!-- Citation Stack List -->
+<div class="space-y-space-sm pt-2">
+<!-- Citation [1] -->
+<div class="citation-card p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all" id="cite-1">
+<div class="flex items-center justify-between gap-2 mb-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-code-sm text-code-sm font-bold text-accent-terracotta shrink-0">[1]</span>
+<span class="font-body-sm text-body-sm font-medium text-ink truncate" title="renewable-energy-policy.pdf">
+                  renewable-energy-policy.pdf
+                </span>
+</div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-success-teal-subtle text-success-teal font-label-xs text-label-xs font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                Verified
+              </span>
+</div>
+<div class="flex items-center justify-between text-ink-subtle font-code-sm text-code-sm pl-5">
+<span>pp. 3–4</span>
+<a class="text-tertiary hover:text-tertiary-container flex items-center gap-0.5 font-label-xs text-label-xs font-medium" data-path="source-detail" href="#">
+                Open source
+                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Citation [2] -->
+<div class="citation-card p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all" id="cite-2">
+<div class="flex items-center justify-between gap-2 mb-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-code-sm text-code-sm font-bold text-accent-terracotta shrink-0">[2]</span>
+<span class="font-body-sm text-body-sm font-medium text-ink truncate" title="renewable-energy-policy.pdf">
+                  renewable-energy-policy.pdf
+                </span>
+</div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-success-teal-subtle text-success-teal font-label-xs text-label-xs font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                Verified
+              </span>
+</div>
+<div class="flex items-center justify-between text-ink-subtle font-code-sm text-code-sm pl-5">
+<span>pp. 7–9</span>
+<a class="text-tertiary hover:text-tertiary-container flex items-center gap-0.5 font-label-xs text-label-xs font-medium" data-path="source-detail" href="#">
+                Open source
+                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Citation [3] -->
+<div class="citation-card p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all" id="cite-3">
+<div class="flex items-center justify-between gap-2 mb-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-code-sm text-code-sm font-bold text-accent-terracotta shrink-0">[3]</span>
+<span class="font-body-sm text-body-sm font-medium text-ink truncate" title="grid_modernization_review.pdf">
+                  grid_modernization_review.pdf
+                </span>
+</div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-warning-amber-subtle text-warning-amber font-label-xs text-label-xs font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                Needs review
+              </span>
+</div>
+<div class="flex items-center justify-between text-ink-subtle font-code-sm text-code-sm pl-5">
+<span>pp. 12–15</span>
+<span class="text-warning-amber font-body-xs text-body-xs font-medium">Outdated 2021 data</span>
+</div>
+</div>
+<!-- Citation [4] -->
+<div class="citation-card p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all" id="cite-4">
+<div class="flex items-center justify-between gap-2 mb-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-code-sm text-code-sm font-bold text-accent-terracotta shrink-0">[4]</span>
+<span class="font-body-sm text-body-sm font-medium text-ink truncate" title="workforce_transition_study.pdf">
+                  workforce_transition_study.pdf
+                </span>
+</div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-success-teal-subtle text-success-teal font-label-xs text-label-xs font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                Verified
+              </span>
+</div>
+<div class="flex items-center justify-between text-ink-subtle font-code-sm text-code-sm pl-5">
+<span>pp. 20–22</span>
+<a class="text-tertiary hover:text-tertiary-container flex items-center gap-0.5 font-label-xs text-label-xs font-medium" data-path="source-detail" href="#">
+                Open source
+                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Citation Audit Action Footer -->
+<div class="pt-space-sm border-t border-border-subtle flex flex-col gap-2">
+<a class="w-full py-2 rounded-lg bg-paper-hover hover:bg-surface-container text-ink font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" data-path="run-history-timeline-detail" href="#">
+<span class="material-symbols-outlined text-[16px]">policy</span>
+<span>View Full Audit Log</span>
+</a>
+<p class="font-body-xs text-body-xs text-ink-subtle text-center">
+            Last re-verified against ground-truth vector DB 42 mins ago.
+          </p>
+</div>
+</div>
+<!-- Quick Context Box -->
+<div class="p-4 rounded-xl bg-accent-terracotta-subtle/60 flex items-start gap-3">
+<span class="material-symbols-outlined text-accent-terracotta text-[20px] mt-0.5 shrink-0">verified_user</span>
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-accent-terracotta font-semibold">Scholarly Audit Trail</span>
+<p class="font-body-xs text-body-xs text-ink-muted leading-relaxed">
+            All citations maintain direct semantic bi-directional links to raw OCR passages and original vector embeddings.
+          </p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  function focusCitation(elementId) {
+    const card = document.getElementById(elementId);
+    if (!card) return;
+    
+    // Clear previous highlights
+    document.querySelectorAll('.citation-card').forEach(el => {
+      el.classList.remove('ring-2', 'ring-accent-terracotta', 'bg-accent-terracotta-subtle');
+    });
+
+    // Apply highlight and scroll
+    card.classList.add('ring-2', 'ring-accent-terracotta', 'bg-accent-terracotta-subtle');
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    setTimeout(() => {
+      card.classList.remove('bg-accent-terracotta-subtle');
+    }, 2400);
+  }
+</script></main></div></body></html>

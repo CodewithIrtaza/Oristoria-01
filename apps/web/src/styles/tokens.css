@@ -1,0 +1,332 @@
+/* ============================================================================
+   DESIGN TOKENS — CSS Custom Properties
+   Generated from DESIGN.md §10–§12 (YAML source of truth)
+   ============================================================================ */
+
+:root {
+  /* =============================================================================
+     COLOR SYSTEM — Light theme (default)
+     ============================================================================= */
+
+  /* Core surfaces */
+  --color-paper: #fafafa;
+  --color-paper-elevated: #ffffff;
+  --color-paper-hover: #f5f5f5;
+  --color-paper-pressed: #eeeeee;
+
+  /* Text */
+  --color-ink: #1a1a2e;
+  --color-ink-muted: #4a4a6a;
+  --color-ink-subtle: #8a8a9a;
+  --color-ink-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --color-border-subtle: #e5e5e5;
+  --color-border-emphasis: #d0d0d0;
+  --color-border-focus: #b85c3d;
+  --color-border-error: #b91c1c;
+
+  /* Accent & Brand */
+  --color-accent-terracotta: #b85c3d;
+  --color-accent-terracotta-hover: #9d4d33;
+  --color-accent-terracotta-pressed: #85402b;
+  --color-accent-terracotta-subtle: #fdf2ef;
+  --color-accent-terracotta-focus: rgba(184, 92, 61, 0.25);
+
+  /* Semantic Colors */
+  --color-success-teal: #0d9488;
+  --color-success-teal-subtle: #e6fffb;
+  --color-warning-amber: #c4963a;
+  --color-warning-amber-subtle: #fffbeb;
+  --color-error-crimson: #b91c1c;
+  --color-error-crimson-subtle: #fef2f2;
+  --color-info-slate: #475569;
+  --color-info-slate-subtle: #f1f5f9;
+
+  /* Status Badges */
+  --color-status-processing: #475569;
+  --color-status-processing-bg: #f1f5f9;
+  --color-status-ready: #0d9488;
+  --color-status-ready-bg: #e6fffb;
+  --color-status-failed: #b91c1c;
+  --color-status-failed-bg: #fef2f2;
+  --color-status-queued: #c4963a;
+  --color-status-queued-bg: #fffbeb;
+
+  /* =============================================================================
+     TYPOGRAPHY
+     ============================================================================= */
+
+  /* Font Families */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Type Scale */
+  --text-display-xl: 3.5rem;    /* 56px */
+  --text-display-lg: 2.5rem;    /* 40px */
+  --text-display-md: 2rem;      /* 32px */
+  --text-display-sm: 1.5rem;    /* 24px */
+
+  --text-h1: 1.875rem;          /* 30px */
+  --text-h2: 1.5rem;            /* 24px */
+  --text-h3: 1.25rem;           /* 20px */
+  --text-h4: 1.125rem;          /* 18px */
+
+  --text-body-lg: 1.125rem;     /* 18px */
+  --text-body: 1rem;            /* 16px */
+  --text-body-sm: 0.875rem;     /* 14px */
+  --text-body-xs: 0.75rem;      /* 12px */
+
+  --text-label-lg: 0.875rem;    /* 14px */
+  --text-label: 0.75rem;        /* 12px */
+  --text-label-xs: 0.625rem;    /* 10px */
+
+  --text-mono-lg: 1rem;         /* 16px */
+  --text-mono: 0.875rem;        /* 14px */
+  --text-mono-sm: 0.75rem;      /* 12px */
+
+  /* =============================================================================
+     SPACING & LAYOUT
+     ============================================================================= */
+
+  --space-base: 1rem;           /* 16px base unit */
+  --space-0: 0;
+  --space-1: 0.25rem;           /* 4px */
+  --space-2: 0.5rem;            /* 8px */
+  --space-3: 0.75rem;           /* 12px */
+  --space-4: 1rem;              /* 16px */
+  --space-5: 1.25rem;           /* 20px */
+  --space-6: 1.5rem;            /* 24px */
+  --space-8: 2rem;              /* 32px */
+  --space-10: 2.5rem;           /* 40px */
+  --space-12: 3rem;             /* 48px */
+  --space-16: 4rem;             /* 64px */
+  --space-20: 5rem;             /* 80px */
+  --space-24: 6rem;             /* 96px */
+
+  /* Layout-specific */
+  --layout-container-max: 72rem;        /* 1152px max content width */
+  --layout-container-padding: 1.5rem;   /* 24px page padding */
+  --layout-sidebar-width: 16rem;        /* 256px collapsed */
+  --layout-sidebar-width-expanded: 20rem; /* 320px expanded */
+  --layout-topbar-height: 4rem;         /* 64px */
+  --layout-modal-max-width: 32rem;      /* 512px */
+  --layout-drawer-width: 24rem;         /* 384px desktop */
+
+  /* =============================================================================
+     SHAPE & BORDERS
+     ============================================================================= */
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;       /* 4px - badges, pills */
+  --radius-md: 0.375rem;      /* 6px - inputs, buttons */
+  --radius-lg: 0.5rem;        /* 8px - cards, containers, modals */
+  --radius-xl: 0.75rem;       /* 12px - large modals, drawers */
+  --radius-2xl: 1rem;         /* 16px - full-screen modals */
+  --radius-full: 9999px;      /* Pills, avatar, badges */
+
+  /* Border Width */
+  --border-width-thin: 1px;
+  --border-width-normal: 1px;
+  --border-width-thick: 2px;
+  --border-width-focus: 2px;
+
+  /* Shadows */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(26, 26, 46, 0.04);
+  --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.08);
+  --shadow-md: 0 4px 12px rgba(26, 26, 46, 0.12);
+  --shadow-lg: 0 8px 24px rgba(26, 26, 46, 0.16);
+  --shadow-xl: 0 16px 48px rgba(26, 26, 46, 0.2);
+  --shadow-inner: inset 0 2px 4px rgba(26, 26, 46, 0.06);
+  --shadow-focus: 0 0 0 2px rgba(184, 92, 61, 0.25);
+  --shadow-focus-dark: 0 0 0 2px rgba(196, 125, 90, 0.35);
+
+  /* =============================================================================
+     TRANSITIONS & MOTION
+     ============================================================================= */
+
+  /* Durations */
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 150ms;
+  --duration-slow: 200ms;
+  --duration-slower: 300ms;
+
+  /* Easings */
+  --easing-ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Specific Transitions */
+  --transition-sidebar: width 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms ease-out;
+  --transition-drawer: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms ease-out;
+  --transition-modal: opacity 150ms ease-out, transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-toast: transform 200ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms ease-out;
+  --transition-button: transform 100ms ease-out, background-color 150ms ease-out, box-shadow 150ms ease-out;
+  --transition-input: border-color 150ms ease-out, box-shadow 150ms ease-out, background-color 150ms ease-out;
+  --transition-card: box-shadow 200ms ease-out, border-color 150ms ease-out, transform 150ms ease-out;
+  --transition-tooltip: opacity 100ms ease-out, transform 100ms ease-out;
+  --transition-skeleton: background-position 1.5s ease-in-out infinite;
+
+  /* =============================================================================
+     Z-INDEX LAYERS
+     ============================================================================= */
+
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sidebar: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-drawer: 600;
+  --z-toast: 700;
+  --z-tooltip: 800;
+  --z-popover: 900;
+
+  /* =============================================================================
+     BREAKPOINTS
+     ============================================================================= */
+
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  /* =============================================================================
+     COMPONENT TOKENS
+     ============================================================================= */
+
+  /* Button */
+  --btn-height-sm: 2rem;      /* 32px */
+  --btn-height-md: 2.5rem;    /* 40px */
+  --btn-height-lg: 3rem;      /* 48px */
+  --btn-padding-sm: 0 0.75rem;
+  --btn-padding-md: 0 1rem;
+  --btn-padding-lg: 0 1.5rem;
+  --btn-gap: 0.5rem;
+  --btn-icon-size-sm: 1rem;      /* 16px */
+  --btn-icon-size-md: 1.25rem;   /* 20px */
+  --btn-icon-size-lg: 1.5rem;    /* 24px */
+
+  /* Input */
+  --input-height-sm: 2rem;      /* 32px */
+  --input-height-md: 2.5rem;    /* 40px */
+  --input-height-lg: 3rem;      /* 48px */
+  --input-padding-sm: 0 0.75rem;
+  --input-padding-md: 0 1rem;
+  --input-padding-lg: 0 1.25rem;
+  --input-placeholder-color: var(--color-ink-subtle);
+
+  /* Card */
+  --card-padding-sm: 1rem;      /* 16px */
+  --card-padding-md: 1.5rem;    /* 24px */
+  --card-padding-lg: 2rem;      /* 32px */
+  --card-gap: 1rem;
+
+  /* Table */
+  --table-cell-padding: 0.75rem 1rem;  /* 12px 16px */
+  --table-header-height: 3rem;         /* 48px */
+  --table-row-height: 3.5rem;          /* 56px */
+
+  /* Modal */
+  --modal-padding: 1.5rem;
+
+  /* Drawer */
+  --drawer-width: 24rem;    /* 384px desktop */
+  --drawer-mobile-width: 100%;
+
+  /* Toast */
+  --toast-max-width: 24rem; /* 384px */
+  --toast-gap: 0.75rem;
+
+  /* Avatar */
+  --avatar-size-xs: 1.5rem;   /* 24px */
+  --avatar-size-sm: 2rem;     /* 32px */
+  --avatar-size-md: 2.5rem;   /* 40px */
+  --avatar-size-lg: 3rem;     /* 48px */
+  --avatar-size-xl: 4rem;     /* 64px */
+
+  /* Badge */
+  --badge-height: 1.25rem;    /* 20px */
+  --badge-padding: 0 0.5rem;
+  --badge-font-size: var(--text-label-xs);
+  --badge-gap: 0.25rem;
+
+  /* Icons */
+  --icon-stroke-width: 2;
+  --icon-stroke-linecap: round;
+  --icon-stroke-linejoin: round;
+  --icon-size-xs: 0.75rem;   /* 12px */
+  --icon-size-sm: 1rem;      /* 16px */
+  --icon-size-md: 1.25rem;   /* 20px */
+  --icon-size-lg: 1.5rem;    /* 24px */
+  --icon-size-xl: 2rem;      /* 32px */
+  --icon-size-2xl: 3rem;     /* 48px */
+}
+
+/* =============================================================================
+   DARK THEME — Override color tokens only
+   ============================================================================= */
+
+[data-theme="dark"] {
+  /* Core surfaces */
+  --color-paper: #141418;
+  --color-paper-elevated: #1c1c24;
+  --color-paper-hover: #242430;
+  --color-paper-pressed: #2d2d3a;
+
+  /* Text */
+  --color-ink: #e8e8e8;
+  --color-ink-muted: #a0a0b0;
+  --color-ink-subtle: #6b6b7b;
+  --color-ink-inverse: #1a1a2e;
+
+  /* Borders & Dividers */
+  --color-border-subtle: #2d2d3a;
+  --color-border-emphasis: #3d3d5c;
+  --color-border-focus: #c47d5a;
+  --color-border-error: #f87171;
+
+  /* Accent & Brand (lighter for dark backgrounds) */
+  --color-accent-terracotta: #c47d5a;
+  --color-accent-terracotta-hover: #d08d6a;
+  --color-accent-terracotta-pressed: #b86d4a;
+  --color-accent-terracotta-subtle: #3d2a24;
+  --color-accent-terracotta-focus: rgba(196, 125, 90, 0.35);
+
+  /* Semantic Colors (adjusted for dark) */
+  --color-success-teal: #2dd4bf;
+  --color-success-teal-subtle: #0a2d2a;
+  --color-warning-amber: #fbbf24;
+  --color-warning-amber-subtle: #3d330a;
+  --color-error-crimson: #f87171;
+  --color-error-crimson-subtle: #3d1a1a;
+  --color-info-slate: #94a3b8;
+  --color-info-slate-subtle: #1e293b;
+
+  /* Status Badges */
+  --color-status-processing: #94a3b8;
+  --color-status-processing-bg: #1e293b;
+  --color-status-ready: #2dd4bf;
+  --color-status-ready-bg: #0a2d2a;
+  --color-status-failed: #f87171;
+  --color-status-failed-bg: #3d1a1a;
+  --color-status-queued: #fbbf24;
+  --color-status-queued-bg: #3d330a;
+
+  /* Shadows adjusted for dark */
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-focus: 0 0 0 2px rgba(196, 125, 90, 0.35);
+}

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-container":"#63627a","success-teal":"#0d9488","paper":"#fafafa","on-tertiary-container":"#ffffff","surface-container":"#eeeeee","on-background":"#1a1c1c","secondary":"#5d5c74","on-primary-fixed":"#390b00","primary":"#994427","accent-terracotta-hover":"#9d4d33","ink-inverse":"#ffffff","on-primary":"#ffffff","secondary-fixed-dim":"#c6c4df","on-tertiary-fixed":"#00201d","on-tertiary":"#ffffff","accent-terracotta":"#b85c3d","surface-container-low":"#f3f3f3","error-crimson":"#b91c1c","info-slate-subtle":"#f1f5f9","tertiary":"#006a61","primary-container":"#b85c3d","tertiary-container":"#00857a","surface-container-highest":"#e2e2e2","secondary-container":"#e2e0fc","on-secondary":"#ffffff","surface-container-high":"#e8e8e8","background":"#f9f9f9","on-secondary-fixed-variant":"#45455b","error-container":"#ffdad6","on-error":"#ffffff","border-focus":"#b85c3d","on-tertiary-fixed-variant":"#005049","border-subtle":"#e5e5e5","border-error":"#b91c1c","outline":"#88726c","surface-variant":"#e2e2e2","warning-amber":"#c4963a","accent-terracotta-pressed":"#85402b","on-primary-fixed-variant":"#7b2e13","error-crimson-subtle":"#fef2f2","on-primary-container":"#ffffff","error":"#ba1a1a","inverse-primary":"#ffb59d","primary-fixed-dim":"#ffb59d","ink-subtle":"#8a8a9a","on-secondary-fixed":"#1a1a2e","primary-fixed":"#ffdbd0","tertiary-fixed-dim":"#6bd8cb","surface-dim":"#dadada","paper-pressed":"#eeeeee","surface-container-lowest":"#ffffff","warning-amber-subtle":"#fffbeb","paper-hover":"#f5f5f5","inverse-surface":"#2f3131","ink":"#1a1a2e","accent-terracotta-subtle":"#fdf2ef","on-surface":"#1a1c1c","ink-muted":"#4a4a6a","surface-tint":"#9a4528","success-teal-subtle":"#e6fffb","tertiary-fixed":"#89f5e7","on-surface-variant":"#55433d","info-slate":"#475569","inverse-on-surface":"#f0f1f1","on-error-container":"#93000a","border-emphasis":"#d0d0d0","surface":"#f9f9f9","surface-bright":"#f9f9f9","outline-variant":"#dbc1b9","secondary-fixed":"#e2e0fc","paper-elevated":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1rem","space-lg":"1.5rem","margin":"1.5rem","margin-desktop":"2rem","gutter-lg":"2rem","space-md":"1rem","gutter":"1.5rem","gutter-sm":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem"},"fontFamily":{"display-sm":["Space Grotesk"],"label-lg":["Inter"],"headline-lg-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-lg":["Space Grotesk"],"body-md":["Inter"],"title-md":["Space Grotesk"],"code-md":["JetBrains Mono"],"body-xs":["Inter"],"body-lg":["Inter"],"label-xs":["Inter"],"headline-sm":["Space Grotesk"],"label-md":["Inter"],"code-sm":["JetBrains Mono"],"display-md":["Space Grotesk"],"headline-md":["Space Grotesk"],"display-xl":["Space Grotesk"],"body-sm":["Inter"]},"fontSize":{"display-sm":["24px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"21px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"39px","letterSpacing":"-0.005em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"46px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"25px","letterSpacing":"0","fontWeight":"600"}],"code-md":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}],"body-xs":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"29px","letterSpacing":"0","fontWeight":"400"}],"label-xs":["10px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"27px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"code-sm":["12px",{"lineHeight":"18px","letterSpacing":"0","fontWeight":"400"}],"display-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"31px","letterSpacing":"0","fontWeight":"600"}],"display-xl":["56px",{"lineHeight":"62px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0","fontWeight":"400"}]}}}}</script></head><body class="bg-paper font-body-md text-body-md text-ink min-h-screen"><header class="fixed top-0 left-0 right-0 h-16 bg-paper-elevated/90 backdrop-blur-xl border-b border-border-subtle z-50 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-accent-terracotta-subtle flex items-center justify-center text-accent-terracotta"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-title-md text-title-md text-ink tracking-tight">Oristoria</span></div><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-ink-subtle text-[18px]">search</span><input class="w-full h-10 pl-9 pr-12 rounded bg-paper border border-border-subtle font-body-sm text-body-sm text-ink placeholder:text-ink-subtle focus:border-border-focus focus:ring-2 focus:ring-accent-terracotta/20 focus:outline-none transition-all" placeholder="Search references, synthesis, notes..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high border border-border-subtle font-code-sm text-code-sm text-ink-muted"><span>⌘</span><span>K</span></div></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-sm px-space-sm py-1 rounded bg-paper border border-border-subtle"><div class="flex flex-col text-right"><span class="font-label-xs text-label-xs text-ink-subtle uppercase">LLM Compute</span><span class="font-code-sm text-code-sm text-ink font-medium">84.2k / 100k</span></div><div class="w-12 h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full bg-accent-terracotta rounded-full" style="width: 84%"></div></div></div><button aria-label="Toggle theme" class="w-9 h-9 rounded flex items-center justify-center text-ink-muted hover:text-ink hover:bg-paper-hover transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="h-6 w-px bg-border-subtle"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-paper-elevated border-r border-border-subtle z-40 flex flex-col justify-between py-space-md"><div class="flex flex-col gap-space-xs px-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Workspace</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta"><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="workspace-home" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Workspace Home</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="sources-list" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">library_books</span><span>Sources</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">148</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="source-detail" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">description</span><span>Source Detail</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="chat-conversation" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">chat_bubble</span><span>Chat</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-accent-terracotta-subtle text-accent-terracotta">Live</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded transition-colors bg-accent-terracotta-subtle text-accent-terracotta font-semibold border-l-2 border-accent-terracotta" data-path="research-workflow" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_tree</span><span>Workflow Run</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-success-teal-subtle text-success-teal">Active</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="run-history" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">history</span><span>Run History</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">29</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="artifacts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Artifacts</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded-full bg-paper border border-border-subtle text-ink-muted">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-ink-muted hover:bg-paper-hover hover:text-ink transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div><div class="px-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low border border-border-subtle flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-ink font-semibold">Academic Tier</span><span class="font-code-sm text-code-sm text-accent-terracotta bg-accent-terracotta-subtle px-1 rounded">PRO</span></div><p class="font-body-xs text-body-xs text-ink-subtle">Unlimited context windows, multi-agent runs &amp; persistent exports.</p><button class="mt-1 w-full h-8 rounded bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button"><span>Upgrade Seat</span><span class="material-symbols-outlined text-[14px]">arrow_forward</span></button></div></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-paper px-margin-desktop"><div class="flex flex-col w-full">
+<!-- Top Workflow Stepper Header Card -->
+<div class="w-full bg-paper-elevated rounded-lg shadow-sm p-space-lg mb-6 relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-accent-terracotta/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+<div class="flex flex-col max-w-2xl">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-accent-terracotta font-medium px-2 py-0.5 rounded-full bg-accent-terracotta-subtle">Workflow Engine v3.4</span>
+<span class="text-ink-subtle text-body-xs font-body-xs">•</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">ID: run_arch_9882a</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-ink font-semibold tracking-tight">Guided Research Workflow</h1>
+<p class="font-body-sm text-body-sm text-ink-muted mt-1 leading-relaxed">Turn a broad scholarly question into a verified, cited deliverable. Steps: Refine question → Gather evidence → Synthesize → Check citations → Generate deliverable.</p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="h-9 px-3.5 rounded bg-surface-container hover:bg-paper-hover text-ink font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">pause</span>
+<span>Pause Run</span>
+</button>
+<button class="h-9 px-4 rounded bg-primary hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-on-primary font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Restart Pipeline</span>
+</button>
+</div>
+</div>
+<!-- 5-Step Progress Stepper -->
+<div class="w-full pt-4 pb-2">
+<div class="grid grid-cols-5 items-center relative">
+<!-- Connecting Line Background -->
+<div class="absolute top-4 left-6 right-6 h-0.5 bg-surface-container-highest -z-0">
+<div class="h-full bg-success-teal transition-all duration-500" style="width: 50%;"></div>
+</div>
+<!-- Step 1: Completed -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-8 h-8 rounded-full bg-success-teal text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-ink mt-2">1. Question</span>
+<span class="font-code-sm text-code-sm text-success-teal">Refined</span>
+</div>
+<!-- Step 2: Completed -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-8 h-8 rounded-full bg-success-teal text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-ink mt-2">2. Evidence</span>
+<span class="font-code-sm text-code-sm text-success-teal">12 Passages</span>
+</div>
+<!-- Step 3: Active Synthesis -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-8 h-8 rounded-full bg-accent-terracotta text-white flex items-center justify-center ring-4 ring-accent-terracotta-subtle shadow-sm animate-pulse">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-accent-terracotta mt-2">3. Synthesis</span>
+<span class="font-code-sm text-code-sm text-accent-terracotta font-medium">In Progress</span>
+</div>
+<!-- Step 4: Upcoming Citations -->
+<div class="flex flex-col items-center text-center relative z-10 opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container text-ink-subtle flex items-center justify-center">
+<span class="font-code-sm text-code-sm font-medium">4</span>
+</div>
+<span class="font-label-md text-label-md font-medium text-ink-muted mt-2">4. Citations</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">Queued</span>
+</div>
+<!-- Step 5: Upcoming Deliverable -->
+<div class="flex flex-col items-center text-center relative z-10 opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container text-ink-subtle flex items-center justify-center">
+<span class="font-code-sm text-code-sm font-medium">5</span>
+</div>
+<span class="font-label-md text-label-md font-medium text-ink-muted mt-2">5. Deliverable</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">Awaiting Final</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Canvas Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start pb-16">
+<!-- Left Workflow Cards (Col 8) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Step 1: Question Refinement Card -->
+<section class="bg-paper-elevated rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-success-teal-subtle text-success-teal flex items-center justify-center font-code-sm text-code-sm font-bold">1</span>
+<h2 class="font-headline-sm text-headline-sm text-ink">Question Refinement</h2>
+</div>
+<span class="font-code-sm text-code-sm text-success-teal bg-success-teal-subtle px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Locked
+          </span>
+</div>
+<div class="bg-surface-container-low rounded p-3 mb-3">
+<p class="font-body-md text-body-md text-ink font-medium leading-relaxed">
+            "What are the economic impacts of renewable portfolio standards on regional wholesale electricity markets?"
+          </p>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider">Suggested Angles Applied:</span>
+<span class="px-2 py-1 rounded bg-surface-container text-ink font-code-sm text-code-sm">Policy analysis</span>
+<span class="px-2 py-1 rounded bg-surface-container text-ink font-code-sm text-code-sm">Comparative study</span>
+<span class="px-2 py-1 rounded bg-surface-container text-ink font-code-sm text-code-sm">Cost-benefit breakdown</span>
+</div>
+</section>
+<!-- Step 2: Evidence Gathering Card -->
+<section class="bg-paper-elevated rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-success-teal-subtle text-success-teal flex items-center justify-center font-code-sm text-code-sm font-bold">2</span>
+<h2 class="font-headline-sm text-headline-sm text-ink">Evidence Gathering &amp; Extraction</h2>
+</div>
+<span class="font-code-sm text-code-sm text-ink-muted">3 Indexed Documents</span>
+</div>
+<!-- Micro status bar -->
+<div class="bg-surface-container-low rounded-lg p-3 mb-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2 text-ink">
+<span class="material-symbols-outlined text-success-teal text-[20px]">manage_search</span>
+<span class="font-body-sm text-body-sm font-semibold">Found 12 relevant passages across workspace</span>
+</div>
+<div class="flex items-center gap-2 text-ink-subtle font-code-sm text-code-sm">
+<span class="text-success-teal">Query expansion ✓</span>
+<span>•</span>
+<span class="text-success-teal">Vector search ✓</span>
+<span>•</span>
+<span class="text-success-teal">Mapping ✓</span>
+</div>
+</div>
+</div>
+<!-- Collapsible Passages Previews -->
+<div class="flex flex-col gap-3">
+<!-- Passage 1 -->
+<div class="bg-paper rounded-lg p-3.5 transition-all hover:bg-paper-hover">
+<div class="flex items-start justify-between gap-3 mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[18px]">picture_as_pdf</span>
+<span class="font-code-sm text-code-sm font-medium text-ink">renewable-energy-policy.pdf</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">p. 4</span>
+</div>
+<div class="flex items-center gap-1.5 bg-success-teal-subtle text-success-teal px-2 py-0.5 rounded font-code-sm text-code-sm font-medium">
+<span>Vector match</span>
+<span>0.94</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-ink-muted italic pl-3 border-l-2 border-accent-terracotta">
+              "...wholesale electricity clearing prices exhibited localized depressive effects under aggressive RPS quotas, specifically during mid-day solar peak generation windows, leading to negative pricing periods in deregulated ISO nodes..."
+            </p>
+</div>
+<!-- Passage 2 -->
+<div class="bg-paper rounded-lg p-3.5 transition-all hover:bg-paper-hover">
+<div class="flex items-start justify-between gap-3 mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[18px]">picture_as_pdf</span>
+<span class="font-code-sm text-code-sm font-medium text-ink">grid_modernization_review.pdf</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">p. 18</span>
+</div>
+<div class="flex items-center gap-1.5 bg-success-teal-subtle text-success-teal px-2 py-0.5 rounded font-code-sm text-code-sm font-medium">
+<span>Vector match</span>
+<span>0.89</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-ink-muted italic pl-3 border-l-2 border-accent-terracotta">
+              "Capital expenditure obligations for transmission line upgrades to accommodate remote renewable assets resulted in elevated non-bypassable retail transmission riders, offsetting wholesale market savings."
+            </p>
+</div>
+</div>
+</section>
+<!-- Step 3: Synthesis & Reasoning in Progress (ACTIVE) -->
+<section class="bg-paper-elevated rounded-lg p-space-lg shadow-md ring-2 ring-accent-terracotta/20 relative">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-accent-terracotta text-white flex items-center justify-center font-code-sm text-code-sm font-bold">3</span>
+<h2 class="font-headline-sm text-headline-sm text-ink">Synthesis &amp; Reasoning Engine</h2>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent-terracotta-subtle text-accent-terracotta font-code-sm text-code-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-terracotta animate-ping"></span> Live Streaming
+            </span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-code-sm text-code-sm text-ink-muted">Tokens: <strong class="text-ink font-semibold" id="token-counter">2,148</strong></span>
+<span class="font-code-sm text-code-sm text-ink-subtle">|</span>
+<span class="font-code-sm text-code-sm text-ink-muted">Temp: <strong class="text-ink font-semibold">0.25</strong></span>
+</div>
+</div>
+<!-- Synthesizing Canvas Container -->
+<div class="bg-surface-container-low rounded-lg p-5 font-body-md text-body-md text-ink leading-relaxed space-y-4">
+<div class="flex items-center gap-2 text-ink-subtle font-code-sm text-code-sm pb-2 border-b border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px] text-accent-terracotta">auto_awesome</span>
+<span>Synthesizing cross-source macroeconomic impacts...</span>
+</div>
+<p>
+            The econometric assessment of <strong>Renewable Portfolio Standards (RPS)</strong> reveals a dual-phase pricing mechanism across regional wholesale power grids. In the immediate operational clearing stage, zero-marginal-cost renewable dispatch suppresses wholesale spot prices via the merit-order effect 
+            <span class="inline-flex items-center px-1.5 py-0.2 rounded bg-paper-hover hover:bg-accent-terracotta-subtle hover:text-accent-terracotta text-ink font-code-sm text-code-sm cursor-pointer ml-1 shadow-sm">[1]</span>.
+          </p>
+<p>
+            However, regional reliability coordinators face amplified ramping costs and negative reserve margins during unanticipated dispatch troughs. This necessity shifts the capital burden to ancillary grid stabilization markets and localized transmission tariff adjustments
+            <span class="inline-flex items-center px-1.5 py-0.2 rounded bg-paper-hover hover:bg-accent-terracotta-subtle hover:text-accent-terracotta text-ink font-code-sm text-code-sm cursor-pointer ml-1 shadow-sm">[2]</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded bg-paper-hover hover:bg-accent-terracotta-subtle hover:text-accent-terracotta text-ink font-code-sm text-code-sm cursor-pointer ml-0.5 shadow-sm">[3]</span>.
+          </p>
+<div class="p-3 bg-paper rounded border-l-4 border-accent-terracotta text-ink-muted font-body-sm text-body-sm">
+<strong class="text-ink font-medium">Core Synthesis Finding:</strong> Wholesale spot price savings are frequently neutralized by non-energy market uplift charges unless regional interties and battery energy storage systems (BESS) are co-located.
+          </div>
+<!-- Typing indicator bar -->
+<div class="flex items-center gap-2 pt-2">
+<div class="flex space-x-1">
+<div class="w-2 h-2 rounded-full bg-accent-terracotta animate-bounce" style="animation-delay: 0s"></div>
+<div class="w-2 h-2 rounded-full bg-accent-terracotta animate-bounce" style="animation-delay: 0.2s"></div>
+<div class="w-2 h-2 rounded-full bg-accent-terracotta animate-bounce" style="animation-delay: 0.4s"></div>
+</div>
+<span class="font-code-sm text-code-sm text-ink-subtle">Formulating regulatory conclusion matrix...</span>
+</div>
+</div>
+</section>
+<!-- Step 4: Citation Audit Preview -->
+<section class="bg-paper-elevated rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-ink-muted flex items-center justify-center font-code-sm text-code-sm font-bold">4</span>
+<h2 class="font-headline-sm text-headline-sm text-ink">Citation Verification &amp; Grounding</h2>
+</div>
+<span class="font-code-sm text-code-sm text-success-teal bg-success-teal-subtle px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> 8/8 Verified (100%)
+          </span>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-ink-subtle font-label-xs text-label-xs uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l">Ref</th>
+<th class="py-2.5 px-3">Synthesized Claim</th>
+<th class="py-2.5 px-3">Source &amp; Context</th>
+<th class="py-2.5 px-3">Page</th>
+<th class="py-2.5 px-3 rounded-r text-right">Grounding</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-ink divide-y divide-surface-container">
+<tr class="hover:bg-paper-hover transition-colors">
+<td class="py-3 px-3 font-code-sm text-code-sm text-accent-terracotta font-semibold">[1]</td>
+<td class="py-3 px-3 font-medium text-ink">Merit-order effect suppresses spot clearing price</td>
+<td class="py-3 px-3 text-ink-muted font-code-sm text-code-sm">renewable-energy-policy.pdf</td>
+<td class="py-3 px-3 font-code-sm text-code-sm text-ink-subtle">p. 4</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 text-success-teal font-code-sm text-code-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 0.96 High
+                  </span>
+</td>
+</tr>
+<tr class="hover:bg-paper-hover transition-colors">
+<td class="py-3 px-3 font-code-sm text-code-sm text-accent-terracotta font-semibold">[2]</td>
+<td class="py-3 px-3 font-medium text-ink">Ancillary grid stabilization and ramping charges</td>
+<td class="py-3 px-3 text-ink-muted font-code-sm text-code-sm">grid_modernization_review.pdf</td>
+<td class="py-3 px-3 font-code-sm text-code-sm text-ink-subtle">p. 18</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 text-success-teal font-code-sm text-code-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 0.92 High
+                  </span>
+</td>
+</tr>
+<tr class="hover:bg-paper-hover transition-colors">
+<td class="py-3 px-3 font-code-sm text-code-sm text-accent-terracotta font-semibold">[3]</td>
+<td class="py-3 px-3 font-medium text-ink">Transmission rider adjustments offset wholesale savings</td>
+<td class="py-3 px-3 text-ink-muted font-code-sm text-code-sm">grid_modernization_review.pdf</td>
+<td class="py-3 px-3 font-code-sm text-code-sm text-ink-subtle">p. 21</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 text-success-teal font-code-sm text-code-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 0.94 High
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Step 5: Deliverable Selector & Final Action -->
+<section class="bg-paper-elevated rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container text-ink-muted flex items-center justify-center font-code-sm text-code-sm font-bold">5</span>
+<h2 class="font-headline-sm text-headline-sm text-ink">Select Deliverable Format</h2>
+</div>
+<span class="font-code-sm text-code-sm text-ink-subtle">Ready to compile</span>
+</div>
+<!-- Format Radio Selection Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6" id="deliverable-options">
+<!-- Option 1: Selected -->
+<label class="flex items-start gap-3 p-3.5 rounded-lg bg-accent-terracotta-subtle border-2 border-accent-terracotta cursor-pointer transition-all">
+<input checked="" class="mt-1 accent-accent-terracotta" name="deliverable" type="radio" value="brief"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-ink font-semibold">Research Brief</span>
+<span class="font-body-xs text-body-xs text-ink-muted mt-0.5">Executive summary with policy matrix, citation footnotes, and bulleted recommendations.</span>
+<span class="font-code-sm text-code-sm text-accent-terracotta mt-2 font-medium">Recommended for Policy &amp; Strategy</span>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-container-low hover:bg-paper-hover border-2 border-transparent cursor-pointer transition-all">
+<input class="mt-1 accent-accent-terracotta" name="deliverable" type="radio" value="monograph"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-ink font-semibold">Markdown Monograph</span>
+<span class="font-body-xs text-body-xs text-ink-muted mt-0.5">Full academic literature integration, methodology section, and BibTeX bibliography block.</span>
+<span class="font-code-sm text-code-sm text-ink-subtle mt-2">Comprehensive Peer-Review Ready</span>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-container-low hover:bg-paper-hover border-2 border-transparent cursor-pointer transition-all">
+<input class="mt-1 accent-accent-terracotta" name="deliverable" type="radio" value="study"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-ink font-semibold">Study Guide</span>
+<span class="font-body-xs text-body-xs text-ink-muted mt-0.5">Key term glossaries, question-and-answer synthesis, and thematic concept cards.</span>
+<span class="font-code-sm text-code-sm text-ink-subtle mt-2">Instructional &amp; Educational</span>
+</div>
+</label>
+<!-- Option 4 -->
+<label class="flex items-start gap-3 p-3.5 rounded-lg bg-surface-container-low hover:bg-paper-hover border-2 border-transparent cursor-pointer transition-all">
+<input class="mt-1 accent-accent-terracotta" name="deliverable" type="radio" value="outline"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-ink font-semibold">Comparative Outline</span>
+<span class="font-body-xs text-body-xs text-ink-muted mt-0.5">Hierarchical multi-column comparison of opposing econometric paradigms.</span>
+<span class="font-code-sm text-code-sm text-ink-subtle mt-2">Quick Reference Matrix</span>
+</div>
+</label>
+</div>
+<!-- Action Button -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-2 text-ink-subtle font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-accent-terracotta">lock_clock</span>
+<span>Artifact compile takes ~12 seconds after synthesis completion</span>
+</div>
+<button class="h-11 px-6 rounded-md bg-accent-terracotta hover:bg-accent-terracotta-hover active:bg-accent-terracotta-pressed text-white font-label-lg text-label-lg font-medium transition-all shadow-md flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span>Generate Deliverable Artifact</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Live Execution Inspector / Timeline Widget (Col 4) -->
+<div class="lg:col-span-4 flex flex-col gap-6 sticky top-20">
+<!-- Metrics Panel -->
+<div class="bg-paper-elevated rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container mb-4">
+<span class="font-title-md text-title-md text-ink font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[20px]">tune</span>
+            Live Inspector
+          </span>
+<span class="font-code-sm text-code-sm text-success-teal bg-success-teal-subtle px-2 py-0.5 rounded font-medium">HEALTHY</span>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="p-3 bg-surface-container-low rounded">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase">Total Tokens</span>
+<div class="font-code-md text-code-md text-ink font-bold mt-1">2,148 <span class="text-xs font-normal text-ink-subtle">/ 16k</span></div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase">Avg Latency</span>
+<div class="font-code-md text-code-md text-ink font-bold mt-1">1.4s <span class="text-xs font-normal text-success-teal">TTFT 240ms</span></div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase">Vectors Hit</span>
+<div class="font-code-md text-code-md text-ink font-bold mt-1">12 <span class="text-xs font-normal text-ink-subtle">passages</span></div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase">Confidence</span>
+<div class="font-code-md text-code-md text-ink font-bold mt-1">98.4%</div>
+</div>
+</div>
+<!-- Token distribution visual bar -->
+<div class="flex flex-col gap-1.5 mb-4">
+<div class="flex justify-between font-label-xs text-label-xs text-ink-subtle">
+<span>Context Allocation</span>
+<span class="font-code-sm text-code-sm">13.4% Capacity</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="bg-tertiary h-full" style="width: 25%" title="System Prompt"></div>
+<div class="bg-success-teal h-full" style="width: 45%" title="Retrieved Passages"></div>
+<div class="bg-accent-terracotta h-full" style="width: 15%" title="Generated Tokens"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] text-ink-subtle font-code-sm pt-1">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-tertiary"></span> System</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-success-teal"></span> Evidence</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-accent-terracotta"></span> Output</span>
+</div>
+</div>
+<!-- Live Agent Event Stream Log -->
+<div class="flex flex-col gap-2 pt-2 border-t border-surface-container">
+<span class="font-label-xs text-label-xs text-ink-subtle uppercase tracking-wider mb-1">Execution Telemetry</span>
+<div class="font-code-sm text-code-sm flex flex-col gap-2.5 max-h-60 overflow-y-auto pr-1">
+<div class="flex items-start gap-2 text-ink-muted">
+<span class="text-ink-subtle text-[11px] mt-0.5">14:02:18</span>
+<span class="text-success-teal">✓</span>
+<span>Vector embedding search complete. 12 hits found.</span>
+</div>
+<div class="flex items-start gap-2 text-ink-muted">
+<span class="text-ink-subtle text-[11px] mt-0.5">14:02:20</span>
+<span class="text-success-teal">✓</span>
+<span>Rerank threshold 0.85 filtered 4 low-affinity fragments.</span>
+</div>
+<div class="flex items-start gap-2 text-ink-muted">
+<span class="text-ink-subtle text-[11px] mt-0.5">14:02:22</span>
+<span class="text-accent-terracotta font-medium animate-pulse">●</span>
+<span class="text-ink">Synthesizing claim statements &amp; cross-referencing citations...</span>
+</div>
+<div class="flex items-start gap-2 text-ink-subtle">
+<span class="text-ink-subtle text-[11px] mt-0.5">14:02:26</span>
+<span>○</span>
+<span>Pending final hallucination validation pass.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Context Artifacts Reference -->
+<div class="bg-paper-elevated rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md font-semibold text-ink">Corpus Scope</span>
+<span class="font-code-sm text-code-sm text-ink-subtle">2 Selected</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-[18px] text-accent-terracotta shrink-0">article</span>
+<div class="truncate">
+<div class="font-body-sm text-body-sm font-medium text-ink truncate">renewable-energy-policy.pdf</div>
+<div class="font-code-sm text-code-sm text-ink-subtle">64 KB • 24 Pages</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle hover:text-ink cursor-pointer">open_in_new</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-[18px] text-accent-terracotta shrink-0">article</span>
+<div class="truncate">
+<div class="font-body-sm text-body-sm font-medium text-ink truncate">grid_modernization_review.pdf</div>
+<div class="font-code-sm text-code-sm text-ink-subtle">182 KB • 56 Pages</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-ink-subtle hover:text-ink cursor-pointer">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple token counter simulation to give lively presence to the synthesis stream
+  let count = 2148;
+  const counterEl = document.getElementById('token-counter');
+  if (counterEl) {
+    const interval = setInterval(() => {
+      count += Math.floor(Math.random() * 4) + 1;
+      counterEl.textContent = count.toLocaleString();
+      if (count > 2240) clearInterval(interval);
+    }, 450);
+  }
+
+  // Interactive Deliverable format selector cards
+  const options = document.querySelectorAll('#deliverable-options label');
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      options.forEach(opt => {
+        opt.classList.remove('bg-accent-terracotta-subtle', 'border-accent-terracotta');
+        opt.classList.add('bg-surface-container-low', 'border-transparent');
+      });
+      option.classList.remove('bg-surface-container-low', 'border-transparent');
+      option.classList.add('bg-accent-terracotta-subtle', 'border-accent-terracotta');
+    });
+  });
+</script></main></div></body></html>
